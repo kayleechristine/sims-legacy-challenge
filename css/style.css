@@ -1,3 +1,13 @@
+:root {
+    --hue1: #a7ff83;
+    --hue2: #24b978;
+    --hue3: #2e8b58;
+    --hue4: #116971;
+}
+.pack-icon {
+    width: 50px;
+}
+
 h1 {
     font-family: "Noto Sans", sans-serif;
 }
