@@ -1,0 +1,42 @@
+h1 {
+    font-family: "Noto Sans", sans-serif;
+}
+.skill-container .skill {
+    color: white;
+    background-color: lightgray;
+    margin: 5px 0;
+    padding: 10px 0 10px 4px;
+    overflow: hidden;
+    border-radius: 5px;
+    white-space: nowrap;
+    position: relative;
+    z-index:0;
+}
+
+.skill-container .skill::before {
+    content: "";
+    position: absolute;
+    background-color: seagreen;
+    border-radius: inherit;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    animation: animateLeft 1s ease-out;
+}
+
+@keyframes animateLeft {
+    from {
+        transform: translateX(-100%);
+    }
+}
+
+.skill-container .skill.skill-level-70::before {
+    width: 70%
+}
+.skill-container .skill.skill-level-40::before {
+    width: 40%
+}
+.skill-container .skill.skill-level-100::before {
+    width: 100%
+}
