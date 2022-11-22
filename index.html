@@ -54,27 +54,110 @@
             </div>
         </div>
     </nav>
-    <main class="m-2">
+    <main class="m-3">
 
     <h2>Create a Legacy Challenge</h2><hr>
 
-        <p>Owned Packs:</p>
+    <h4>Owned Packs:</h4>
+    <div class="pack-container">
+        <input type="checkbox" id="high-school-years" checked>
+            <label for="high-school-years">
+                <img src="img/EP12-96.png" alt="Sims 4 High School Years">
+            </label>
+        <input type="checkbox" id="country-living" checked>
+            <label for="country-living">
+                <img src="img/EP11-96.png" alt="Sims 4 Country Living">
+            </label>
+        <input type="checkbox" id="snowy-escape" checked>
+            <label for="snowy-escape">
+                <img src="img/EP10-96.png" alt="Sims 4 Snowy Escape">
+            </label>
+        <input type="checkbox" id="eco-living" checked>
+            <label for="eco-living">
+                <img src="img/EP09-96.png" alt="Sims 4 Eco Living">
+            </label>
+        <input type="checkbox" id="university" checked>
+            <label for="university">
+                <img src="img/EP08-96.png" alt="Sims 4 University">
+            </label>
+        <input type="checkbox" id="island-living" checked>
+            <label for="island-living">
+                <img src="img/EP07-96.png" alt="Sims 4 Island Living">
+            </label>
+        <input type="checkbox" id="get-famous" checked>
+            <label for="get-famous">
+                <img src="img/EP06-96.png" alt="Sims 4 Get Famous">
+            </label>
+        <input type="checkbox" id="cats-and-dogs" checked>
+            <label for="cats-and-dogs">
+                <img src="img/EP04-96.png" alt="Sims 4 Cats & Dogs">
+            </label>
+        <input type="checkbox" id="city-living" checked>
+            <label for="city-living">
+                <img src="img/EP03-96.png"  alt="Sims 4 City Living">
+            </label>
+        <input type="checkbox" id="get-together" checked>
+            <label for="get-together">
+                <img src="img/EP02-96.png" alt="Sims 4 Get Together">
+            </label>
+        <input type="checkbox" id="werewolves" checked>
+            <label for="werewolves">
+                <img src="img/GP12-96.png" alt="Sims 4 Werewolves">
+            </label>
+        <input type="checkbox" id="journey-to-batuu" checked>
+            <label for="journey-to-batuu">
+                <img src="img/GP09-96.png" alt="Sims 4 Journey to Batuu">
+            </label>
+        <input type="checkbox" id="realm-of-magic" checked>
+            <label for="realm-of-magic">
+                <img src="img/GP08-96.png" alt="Sims 4 Realm of Magic">
+            </label>
+        <input type="checkbox" id="strangerville" checked>
+            <label for="strangerville">
+                <img src="img/GP07-96.png" alt="Sims 4 Strangerville">
+            </label>
+        <input type="checkbox" id="jungle-adventure" checked>
+            <label for="jungle-adventure">
+                <img src="img/GP06-96.png" alt="Sims 4 Jungle Adventure">
+            </label>
+        <input type="checkbox" id="parenthood" checked>
+            <label for="parenthood">
+                <img src="img/GP05-96.png" alt="Sims 4 Parenthood">
+            </label>
+        <input type="checkbox" id="vampires" checked>
+            <label for="vampires">
+                <img src="img/GP04-96.png" alt="Sims 4 Vampires">
+            </label>
+        <input type="checkbox" id="spa-day" checked>
+            <label for="spa-day">
+                <img src="img/GP02-96.png" alt="Sims 4 Spa Day">
+            </label>
+        <input type="checkbox" id="outdoor-retreat" checked>
+            <label for="outdoor-retreat">
+                <img src="img/GP01-96.png" alt="Sims 4 Outdoor Retreat">
+            </label>
+        <input type="checkbox" id="nifty-knitting" checked>
+            <label for="nifty-knitting">
+                <img src="img/SP17-96.png" alt="Sims 4 Nifty Knitting">
+            </label>
+        <input type="checkbox" id="bust-the-dust" checked>
+            <label for="bust-the-dust">
+                <img src="img/SP22-96.png" alt="Sims 4 Bust the Dust">
+            </label>
+    </div>
 
-        <input type="checkbox" onchange="checkSelectedPacks('sims4');" name="post_extra_sims4packs" value="EP02" id="EP02">
-        <label for="EP02" style="background-image: url('img/EP02-96.png')"></label>
-
-        <img src="img/EP12-96.png" class="pack-icon" alt="Sims 4 High School Years">
-        <img src="img/EP11-96.png" class="pack-icon" alt="Sims 4 Country Living">
-        <img src="img/EP10-96.png" class="pack-icon" alt="Sims 4 Snowy Escape">
-        <img src="img/EP09-96.png" class="pack-icon" alt="Sims 4 Eco Living">
-        <img src="img/EP08-96.png" class="pack-icon" alt="Sims 4 University">
-        <img src="img/EP07-96.png" class="pack-icon" alt="Sims 4 Island Living">
-        <img src="img/EP06-96.png" class="pack-icon" alt="Sims 4 Get Famous">
-        <img src="img/EP04-96.png" class="pack-icon" alt="Sims 4 Cats & Dogs">
-        <img src="img/EP03-96.png" class="pack-icon" alt="Sims 4 City Living">
-        <img src="img/EP02-96.png" class="pack-icon" alt="Sims 4 Get Together">
-        <img src="img/GP05-96.png" class="pack-icon" alt="Sims 4 Parenthood">
-
+    <h4>Succession Laws:</h4>
+        <select name="inheritance">
+            <option value="female"></option>
+            <option value="male"></option>
+            <option value="both"></option>
+        </select>
+        <select class="form-select" aria-label="inheritance-law">
+            <option selected>Open this select menu</option>
+            <option value="female">Matriarchy</option>
+            <option value="male">Patriarchy</option>
+            <option value="either">Modern</option>
+        </select>
 
 <!--        <h1>Challenge Progress</h1>-->
 <!--        <div class="skill-container">-->
