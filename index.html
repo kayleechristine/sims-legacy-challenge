@@ -58,7 +58,7 @@
 
     <h2>Create a Legacy Challenge</h2><hr>
 
-    <h4>Owned Packs:</h4>
+    <h3>Owned Packs:</h3>
     <div class="pack-container">
         <input type="checkbox" id="high-school-years" checked>
             <label for="high-school-years">
@@ -146,18 +146,77 @@
             </label>
     </div>
 
-    <h4>Succession Laws:</h4>
-        <select name="inheritance">
-            <option value="female"></option>
-            <option value="male"></option>
-            <option value="both"></option>
-        </select>
-        <select class="form-select" aria-label="inheritance-law">
-            <option selected>Open this select menu</option>
+    <h3>Overview:</h3>
+
+        <form class="row gx-3 gy-2 align-items-center">
+            <div class="row mt-3">
+                <div class="col-3">
+                    <label class="visually-hidden" for="challenge-title">Title</label>
+                    <input type="text" class="form-control" id="challenge-title" placeholder="Challenge Title">
+                </div>
+                <div class="col-3">
+                    <label class="visually-hidden" for="challenge-difficulty">Difficulty</label>
+                    <select class="form-select" id="challenge-difficulty">
+                        <option selected disabled>Start Difficulty...</option>
+                        <option value="1">Easy</option>
+                        <option value="2">Normal</option>
+                        <option value="3">Extreme</option>
+                    </select>
+                </div>
+
+<!--                <div class="col-6">-->
+<!--                    <div class="input-group">-->
+<!--                        <label class="visually-hidden" for="challenge-title">Title</label>-->
+<!--                        <input type="text" class="form-control" id="challenge-title" placeholder="Challenge Title">-->
+<!--                        <label class="visually-hidden" for="challenge-difficulty" >Difficulty</label>-->
+<!--                        <select class="form-select" id="challenge-difficulty">-->
+<!--                            <option selected disabled>Start Difficulty...</option>-->
+<!--                            <option value="1">Easy</option>-->
+<!--                            <option value="2">Normal</option>-->
+<!--                            <option value="3">Extreme</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-6">
+                    <label class="visually-hidden" for="challenge-description">Description</label>
+                    <textarea type="text" class="form-control input-group" id="challenge-description" placeholder="Challenge Description"></textarea>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-6">
+                    <label class="visually-hidden" for="challenge-tags">Tags</label>
+                    <div class="input-group">
+                        <div class="input-group-text">#</div>
+                        <input type="text" class="form-control" id="challenge-tags" placeholder="Tags">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3 mb-3">
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+
+   <h3>Succession Laws:</h3>
+
+        <label for="inheritance-law">Inheritance Law:</label>
+        <select class="form-select" aria-label="inheritance-law" id="inheritance-law">
+            <option selected>Select Inheritance</option>
             <option value="female">Matriarchy</option>
             <option value="male">Patriarchy</option>
             <option value="either">Modern</option>
         </select>
+        <input class="form-check-input" type="checkbox" value="true" id="strict-inheritance">
+        <label class="form-check-label" for="strict-inheritance">
+            Strict?
+        </label>
 
 <!--        <h1>Challenge Progress</h1>-->
 <!--        <div class="skill-container">-->
