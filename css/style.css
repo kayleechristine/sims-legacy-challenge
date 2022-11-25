@@ -8,12 +8,12 @@ h1 {
     font-family: "Noto Sans", sans-serif;
 }
 /*Expansion Pack Selection*/
-.pack-container {
+#pack-container {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 1em;
 }
-.pack-container>[type="checkbox" i] {
+#pack-container>[type="checkbox" i] {
     display: none;
 }
 label {

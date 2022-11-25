@@ -60,12 +60,13 @@
 
         <h3>Required Packs:</h3>
         <span>Select which packs will be required for your challenge.</span>
-            <div class="pack-container ps-4 pe-4">
-                <input type="checkbox" id="high-school-years">
+        <form class="row gx-3 gy-2 align-items-center">
+            <div class="ps-4 pe-4" id="pack-container">
+                <input type="checkbox" name="req-pack" id="high-school-years" value="EP12">
                     <label for="high-school-years" data-bs-toggle="tooltip" data-bs-title="High School Years">
                         <img src="img/EP12-96.png" alt="Sims 4 High School Years">
                     </label>
-                <input type="checkbox" id="country-living">
+                <input type="checkbox" name="req-pack" id="country-living" value="EP11">
                     <label for="country-living" data-bs-toggle="tooltip" data-bs-title="Country Living">
                         <img src="img/EP11-96.png" alt="Sims 4 Country Living">
                     </label>
@@ -151,7 +152,7 @@
         <!--TODO: Upload a cover photo section-->
         <!--TODO: Explain each difficulty level-->
         <!--TODO: Tags entered in tag section will separate with each entry-->
-            <form class="row gx-3 gy-2 align-items-center">
+
                 <div class="row mt-3">
                     <div class="col-3">
                         <label class="visually-hidden" for="challenge-title">Title</label>
@@ -182,6 +183,7 @@
                         </div>
                     </div>
                 </div>
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
             </form>
 
         <h3>Succession Laws:</h3>
