@@ -167,14 +167,12 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="row mt-3">
                     <div class="col-6">
                         <label class="visually-hidden" for="challenge-description">Description</label>
                         <textarea type="text" class="form-control input-group" id="challenge-description" placeholder="Challenge Description"></textarea>
                     </div>
                 </div>
-
                 <div class="row mt-3 mb-3">
                     <div class="col-6">
                         <label class="visually-hidden" for="challenge-tags">Tags</label>
@@ -184,12 +182,6 @@
                         </div>
                     </div>
                 </div>
-
-    <!--            <div class="row mt-3 mb-3">-->
-    <!--                <div class="col-auto">-->
-    <!--                    <button type="submit" class="btn btn-primary">Submit</button>-->
-    <!--                </div>-->
-    <!--            </div>-->
             </form>
 
         <h3>Succession Laws:</h3>
@@ -257,26 +249,52 @@
             </div>
 
         <h3>Milestones:</h3>
-        <!--TODO: Left-hand generation tabs-->
+        <!--TODO: Numbered generation tabs-->
         <!--TODO: Requirements & Milestones-->
         <!--TODO: Rearrange/remove functionality-->
         <!--TODO: Color picker-->
+        <form class="row gx-3 gy-2 align-items-center">
             <div class="row mt-3">
-                <div class="col-4"></div>
                 <div class="col-3">
-                    <label class="visually-hidden" for="gen-title">Generation Title</label>
+                    <label class="visually-hidden" for="gen-title">Title</label>
                     <input type="text" class="form-control" id="gen-title" placeholder="Generation Title">
                 </div>
-                <div class="col-2">
-                    <label class="visually-hidden" for="gen-color">Color</label>
-                    <select class="form-select" id="gen-color">
+                <div class="col-3">
+                    <label class="visually-hidden" for="gen-difficulty">Color Picker</label>
+                    <select class="form-select" id="gen-difficulty">
                         <option selected disabled>Color...</option>
-                        <option value="1">Easy</option>
-                        <option value="2">Normal</option>
-                        <option value="3">Extreme</option>
+                        <option value="1">Red</option>
+                        <option value="2">Green</option>
+                        <option value="3">Blue</option>
+                        <option value="4">Yellow</option>
                     </select>
                 </div>
             </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <label class="visually-hidden" for="gen-description">Description</label>
+                    <textarea type="text" class="form-control input-group" id="gen-description" placeholder="Generation Description"></textarea>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <label class="visually-hidden" for="requirement">Requirements</label>
+                    <div class="input-group">
+                        <div class="input-group-text">+</div>
+                        <input type="text" class="form-control" id="requirement" placeholder="Enter a requirement...">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 mb-3">
+                <div class="col-6">
+                    <label class="visually-hidden" for="milestone">Milestones</label>
+                    <div class="input-group">
+                        <div class="input-group-text">+</div>
+                        <input type="text" class="form-control" id="milestone" placeholder="Enter a milestone...">
+                    </div>
+                </div>
+            </div>
+        </form>
 
         <h2>Challenge Progress</h2><hr>
             <div class="skill-container">
