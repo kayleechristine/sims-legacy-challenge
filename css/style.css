@@ -7,6 +7,9 @@
 h1 {
     font-family: "Noto Sans", sans-serif;
 }
+.highlight {
+    background: blue;
+}
 /*Expansion Pack Selection*/
 #pack-container {
     display: flex;

@@ -24,12 +24,35 @@ let challenge = {
     // }
 }
 
+
+
+let input = document.getElementById('challenge-tags');
+input.addEventListener('keydown', addHash, false);
+
+function addHash(e) {
+    if (e.keyCode === 32 && e.target.value.length) {
+        e.preventDefault();
+
+        let elem = e.target,
+            val = elem.value;
+
+        if (val.slice(-1) !== '#') {
+            elem.value += ' #';
+        }
+    } else if (!e.target.value.length) {
+        if (e.keyCode === 32) {
+            e.preventDefault();
+        }
+        e.target.value = '#';
+    }
+}
+
 $('#submit').click(function(e) {
     e.preventDefault();
     challenge.title = $('#challenge-title').val();
     challenge.difficulty = $('#challenge-difficulty').val();
     challenge.description = $('#challenge-description').val();
-    challenge.tags = $('#challenge-tags').val().split(", ");
+    challenge.tags = $('#challenge-tags').val().split(' ');
     let packs = [];
     $.each($('input[name="req-pack"]:checked'), function() {
         packs.push($(this).val());
@@ -37,3 +60,6 @@ $('#submit').click(function(e) {
     challenge.packs = packs;
     console.log(challenge);
 });
+
+
+
