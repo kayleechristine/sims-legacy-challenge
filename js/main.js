@@ -29,8 +29,7 @@ $('#submit').click(function(e) {
     challenge.title = $('#challenge-title').val();
     challenge.difficulty = $('#challenge-difficulty').val();
     challenge.description = $('#challenge-description').val();
-    challenge.tags = $('#challenge-tags').val();
-    // challenge.packs = $('#pack-container').children('selected').val();
+    challenge.tags = $('#challenge-tags').val().split(", ");
     let packs = [];
     $.each($('input[name="req-pack"]:checked'), function() {
         packs.push($(this).val());
