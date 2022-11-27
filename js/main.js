@@ -1,6 +1,10 @@
+"use strict";
+
+// Bootstrap Tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+// Challenge Data
 let challenge = {
     title: '',
     difficulty: '',
@@ -24,8 +28,8 @@ let challenge = {
     // }
 }
 
-
-
+// Challenge Tags
+// TODO: Stylize how tags appear in the input field
 let input = document.getElementById('challenge-tags');
 input.addEventListener('keydown', addHash, false);
 
@@ -47,6 +51,7 @@ function addHash(e) {
     }
 }
 
+// Submit - Generate Challenge
 $('#submit').click(function(e) {
     e.preventDefault();
     challenge.title = $('#challenge-title').val();
@@ -60,6 +65,3 @@ $('#submit').click(function(e) {
     challenge.packs = packs;
     console.log(challenge);
 });
-
-
-
