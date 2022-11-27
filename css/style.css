@@ -7,8 +7,8 @@
 h1 {
     font-family: "Noto Sans", sans-serif;
 }
-.highlight {
-    background: blue;
+.bi-question-circle-fill {
+    fill: blue;
 }
 /*Expansion Pack Selection*/
 #pack-container {
@@ -19,14 +19,14 @@ h1 {
 #pack-container>[type="checkbox" i] {
     display: none;
 }
-label {
+.pack {
     border: 1px solid #fff;
     padding: 10px 10px 10px 0;
     display: block;
     position: relative;
     cursor: pointer;
 }
-label:before {
+.pack:before {
     background-color: white;
     color: white;
     content: " ";
@@ -39,7 +39,7 @@ label:before {
     transition-duration: 0.4s;
     transform: scale(0);
 }
-label img {
+.pack img {
     height: 75px;
     width: 75px;
     transition-duration: 0.2s;
@@ -48,7 +48,7 @@ label img {
     box-shadow: 0 0 5px #333;
     margin: 0 auto;
 }
-:not(:checked) + label img {
+:not(:checked) + .pack img {
     transform: scale(0.9);
     box-shadow: 0 0 5px #333;
     opacity: 50%;
