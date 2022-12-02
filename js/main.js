@@ -11,12 +11,12 @@ let challenge = {
     description: '',
     tags: '',
     packs: '',
-    // succession: {
-    //     inheritance: '',
-    //     bloodline: '',
-    //     heir: '',
-    //     species: ''
-    // },
+    succession: { // TODO: Push data to challenge object
+        inheritance: '',
+        bloodline: '',
+        heir: '',
+        species: ''
+    },
     // generations: {
     //     1: {
     //         title: '',
