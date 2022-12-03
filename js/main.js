@@ -64,4 +64,6 @@ function hashtag(e) {
     }
 }
 
+// TODO: Make succession law cards
+
 })();
