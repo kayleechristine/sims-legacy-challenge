@@ -28,15 +28,15 @@ $('#submit').click(function(e) {
             heir: $('#heir-law').val(),
             species: $('#species-law').val()
         },
-        // generations: { // TODO: Push generation data to challenge object
-        //     1: {
-        //         title: '',
-        //         color: '',
-        //         description: '',
-        //         requirements: '',
-        //         milestones: '',
-        //     }
-        // }
+        generations: { // TODO: Push generation data to challenge object
+            1: {
+                title: '',
+                color: '',
+                description: '',
+                requirements: '',
+                milestones: '',
+            }
+        }
     }
     console.log(challenge);
 });
