@@ -91,3 +91,11 @@ h1 {
 .skill-container .skill.skill-level-100::before {
     width: 100%
 }
+.card {
+    display: flex;
+}
+.rounded-start {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
