@@ -94,8 +94,17 @@ h1 {
 .card {
     display: flex;
 }
-.rounded-start {
+.card-body {
+    padding: 10px 10px 10px 0;
+    justify-content: center;
+    align-items: center;
+}
+.card-image {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rounded-start {
     justify-self: center;
     align-self: center;
 }
