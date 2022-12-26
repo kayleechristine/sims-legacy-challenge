@@ -177,7 +177,7 @@ function hashtag(e) {
         {
             id: 15,
             name: 'Xenocracy',
-            description: 'Heirs must alternate between human and alien.',
+            description: 'Heirs must alternate between different species (ie; human, vampire, werewolf, alien, or spellcaster).',
             image: 'img/laws/different-people.png',
             alt: 'two people'
         },
@@ -199,7 +199,7 @@ function hashtag(e) {
             id: 18,
             name: 'Tolerant',
             description: 'The species of a sim has no impact on eligibility for heir. There are no restrictions on species.',
-            image: 'img/laws/group.png',
+            image: 'img/laws/people.png',
             alt: 'group of different people'
         }
     ];

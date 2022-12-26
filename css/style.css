@@ -54,6 +54,10 @@ h1 {
     opacity: 50%;
     z-index: -1;
 }
+/*Cards*/
+.card-body {
+    height: 128px;
+}
 /*Status Bars*/
 .skill-container .skill {
     color: white;
