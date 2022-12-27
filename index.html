@@ -56,15 +56,16 @@
             </div>
         </div>
     </nav>
-    <main class="m-5 mt-4">
+    <main class="row align-content-center">
+        <div class="mt-4 m-5 col-10">
 
         <h2>Create a Legacy Challenge</h2><hr>
-        <form class="row align-items-center m-2">
+        <form class="align-items-center m-2">
         <!--TODO: Make dynamic for different screen sizes-->
 
         <h3>Required Packs:</h3>
-        <span class="mb-3">Select which packs will be required for your challenge.</span>
-            <div class="ps-5 pe-5" id="pack-container">
+        <span>Select which packs will be required for your challenge.</span>
+            <div class="mt-3 ps-4 pe-4" id="pack-container">
                 <input type="checkbox" name="req-pack" id="high-school-years" value="EP12">
                     <label class="pack" for="high-school-years" data-bs-toggle="tooltip" data-bs-title="High School Years">
                         <img src="img/packs/EP12-96.png" alt="Sims 4 High School Years">
@@ -154,7 +155,7 @@
         <h3>Overview:</h3>
         <!--TODO: Upload a cover photo section-->
         <!--TODO: Explain each difficulty level-->
-        <div class="row gx-5">
+        <div class="row">
             <div class="col-8 mt-3 mb-3 ps-5 pe-4">
                 <div class="row">
                     <div class="w-50">
@@ -217,7 +218,7 @@
         <h3>Succession Laws:</h3>
         <!--TODO: Better explanation for Strict Mode-->
         <!--TODO: Trait/species selection for certain laws-->
-            <div class="row mt-3 mb-3 ps-5 pe-5">
+            <div class="row mt-3 mb-3 ps-5 pe-5 justify-content-between">
                 <div class="col-12 col-lg-5">
                     <div class="card mb-2">
                         <div class="row" id="inheritance-container">
@@ -418,6 +419,7 @@
         <!-- TODO: Succession law cards -->
         <div id="card-container" style="display: flex; justify-content: space-evenly;"></div>
 
+        </div>
     </main>
 
     <!--JavaScript Bundle with Popper-->

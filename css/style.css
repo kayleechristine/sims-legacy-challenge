@@ -4,6 +4,11 @@
     --hue3: #2e8b58;
     --hue4: #116971;
 }
+main {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
 h1 {
     font-family: "Noto Sans", sans-serif;
 }
