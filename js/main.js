@@ -5,13 +5,24 @@
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-// Challenge Data
+// Logo Selection
 let logo;
 $('#logo-submit').click(function() {
     logo = $('input[name="challenge-logo"]:checked').val();
-    console.log(logo);
+    $('#logo-placeholder').attr('src', `img/logos/${logo}.png`).css('opacity', '100%');
+    $('#logo-card').hover(
+        function(){
+            $('#logo-btn').css('opacity', '100');
+            $('#logo-placeholder').css('opacity', '50%');
+        },
+        function(){
+            $('#logo-btn').css('opacity', '0');
+            $('#logo-placeholder').css('opacity', '100%');
+        }
+    );
 })
 
+// Challenge Data
 $('#submit').click(function(e) {
     e.preventDefault();
 
