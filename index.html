@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="img/plumbob.svg" rel="icon" type="image/png" />
+    <link href="img/plumbob.svg" rel="logo" type="image/png" />
     <title>Sims Legacies</title>
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-logos@1.10.2/font/bootstrap-logos.css">-->
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
         <div class="container-fluid">
             <a class="navbar-brand me-1" href="#"><img src="img/plumbob.svg" alt="plumbob" style="width: 35px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-logo"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -197,33 +197,103 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Challenge Icons</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Challenge Logos</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body icon-container">
-                                        <img src="img/logos/alms.png" alt="hand holding coin icon" class="icon">
-                                        <img src="img/logos/astrology.png" alt="zodiac constellation icon" class="icon">
-                                        <img src="img/logos/berries.png" alt="berries icon" class="icon">
-                                        <img src="img/logos/best.png" alt="award ribbon icon" class="icon">
-                                        <img src="img/logos/black-widow.png" alt="black widow spider icon" class="icon">
-                                        <img src="img/logos/briefcase.png" alt="briefcase icon" class="icon">
-                                        <img src="img/logos/castle.png" alt="european castle icon" class="icon">
-                                        <img src="img/logos/catalonia.png" alt="flower and book icon" class="icon">
-                                        <img src="img/logos/column.png" alt="historical stone column icon" class="icon">
-                                        <img src="img/logos/desert.png" alt="desert landscape icon" class="icon">
-                                        <img src="img/logos/dice.png" alt="dice icon" class="icon">
-                                        <img src="img/logos/farm.png" alt="country farm landscape icon" class="icon">
-                                        <img src="img/logos/home.png" alt="house with a heart icon" class="icon">
-                                        <img src="img/logos/island.png" alt="mountainous island with sun icon" class="icon">
-                                        <img src="img/logos/kiss.png" alt="lips icon" class="icon">
-                                        <img src="img/logos/lake.png" alt="mountainous lake with moon icon" class="icon">
-                                        <img src="img/logos/lighthouse.png" alt="lighthouse on the beach icon" class="icon">
-                                        <img src="img/logos/money-bag.png" alt="bag of money icon" class="icon">
-                                        <img src="img/logos/moon.png" alt="moon with stars icon" class="icon">
-                                        <img src="img/logos/pacifier.png" alt="pink pacifier icon" class="icon">
-                                        <img src="img/logos/sprout.png" alt="plant sprout icon" class="icon">
-                                        <img src="img/logos/sun.png" alt="sun icon" class="icon">
-                                        <img src="img/logos/tent.png" alt="camping tent icon" class="icon">
+                                    <div class="modal-body logo-container">
+
+                                        <input type="radio" name="challenge-logo" id="alms" value="L01">
+                                        <label class="logo" for="alms">
+                                            <img src="img/logos/alms.png" alt="hand holding coin logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="astrology" value="L02">
+                                        <label class="logo" for="astrology">
+                                            <img src="img/logos/astrology.png" alt="zodiac constellation logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="berries" value="L03">
+                                        <label class="logo" for="berries">
+                                            <img src="img/logos/berries.png" alt="berries logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="best" value="L04">
+                                        <label class="logo" for="best">
+                                            <img src="img/logos/best.png" alt="award ribbon logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="black-widow" value="L05">
+                                        <label class="logo" for="black-widow">
+                                            <img src="img/logos/black-widow.png" alt="black widow spider logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="briefcase" value="L06">
+                                        <label class="logo" for="briefcase">
+                                            <img src="img/logos/briefcase.png" alt="briefcase logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="castle" value="L07">
+                                        <label class="logo" for="castle">
+                                            <img src="img/logos/castle.png" alt="european castle logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="catalonia" value="L08">
+                                        <label class="logo" for="catalonia">
+                                            <img src="img/logos/catalonia.png" alt="flower and book logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="column" value="L09">
+                                        <label class="logo" for="column">
+                                            <img src="img/logos/column.png" alt="historical stone column logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="desert" value="L10">
+                                        <label class="logo" for="desert">
+                                            <img src="img/logos/desert.png" alt="desert landscape logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="dice" value="L11">
+                                        <label class="logo" for="dice">
+                                            <img src="img/logos/dice.png" alt="dice logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="farm" value="L12">
+                                        <label class="logo" for="farm">
+                                            <img src="img/logos/farm.png" alt="country farm landscape logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="home" value="L13">
+                                        <label class="logo" for="home">
+                                            <img src="img/logos/home.png" alt="house with a heart logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="island" value="L14">
+                                        <label class="logo" for="island">
+                                            <img src="img/logos/island.png" alt="mountainous island with sun logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="kiss" value="L15">
+                                        <label class="logo" for="kiss">
+                                            <img src="img/logos/kiss.png" alt="lips logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="lake" value="L16">
+                                        <label class="logo" for="lake">
+                                            <img src="img/logos/lake.png" alt="mountainous lake with moon logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="lighthouse" value="L17">
+                                        <label class="logo" for="lighthouse">
+                                            <img src="img/logos/lighthouse.png" alt="lighthouse on the beach logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="money-bag" value="L18">
+                                        <label class="logo" for="money-bag">
+                                            <img src="img/logos/money-bag.png" alt="bag of money logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="moon" value="L19">
+                                        <label class="logo" for="moon">
+                                            <img src="img/logos/moon.png" alt="moon with stars logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="pacifier" value="L20">
+                                        <label class="logo" for="pacifier">
+                                            <img src="img/logos/pacifier.png" alt="pink pacifier logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="sprout" value="L21">
+                                        <label class="logo" for="sprout">
+                                            <img src="img/logos/sprout.png" alt="plant sprout logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="sun" value="L22">
+                                        <label class="logo" for="sun">
+                                            <img src="img/logos/sun.png" alt="sun logo">
+                                        </label>
+                                        <input type="radio" name="challenge-logo" id="tent" value="L23">
+                                        <label class="logo" for="tent">
+                                            <img src="img/logos/tent.png" alt="camping tent logo">
+                                        </label>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

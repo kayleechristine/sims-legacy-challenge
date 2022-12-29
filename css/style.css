@@ -12,22 +12,48 @@ main {
 h1 {
     font-family: "Noto Sans", sans-serif;
 }
-.bi-question-circle-fill {
-    fill: blue;
-}
-/*Challenge Icons*/
-.icon-container {
+
+/* Challenge Logos */
+.logo-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 1em;
 }
-.icon {
+.logo-container>[type="radio" i] {
+    display: none;
+}
+.logo {
+    border: 1px solid #fff;
+    margin: 10px 10px 10px 0;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+/*:hover + .logo img {*/
+/*    transform: scale(1);*/
+/*    box-shadow: 0 0 5px #333;*/
+/*    opacity: 100%;*/
+/*    z-index: 1;*/
+/*}*/
+.logo img {
     height: 75px;
     width: 75px;
-    padding: 5px;
+    padding: 2px;
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #333;
+    margin: 0 auto;
 }
-/*Expansion Pack Selection*/
+:not(:checked) + .logo img {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #333;
+    opacity: 50%;
+    z-index: -1;
+}
+
+/* Expansion Pack Selection */
 #pack-container {
     display: flex;
     flex-wrap: wrap;
@@ -42,19 +68,6 @@ h1 {
     display: block;
     position: relative;
     cursor: pointer;
-}
-.pack:before {
-    background-color: white;
-    color: white;
-    content: " ";
-    display: block;
-    border-radius: 50%;
-    border: 1px solid grey;
-    position: absolute;
-    text-align: center;
-    line-height: 28px;
-    transition-duration: 0.4s;
-    transform: scale(0);
 }
 .pack img {
     height: 75px;
@@ -71,11 +84,13 @@ h1 {
     opacity: 50%;
     z-index: -1;
 }
-/*Cards*/
+
+/* Cards */
 .card-body {
     height: 128px;
 }
-/*Status Bars*/
+
+/* Status Bars */
 .skill-container .skill {
     color: white;
     background-color: lightgray;
