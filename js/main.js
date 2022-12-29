@@ -6,8 +6,10 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 // Challenge Data
+let logo;
 $('#logo-submit').click(function() {
-    console.log($('input[name="challenge-logo"]:checked').val());
+    logo = $('input[name="challenge-logo"]:checked').val();
+    console.log(logo);
 })
 
 $('#submit').click(function(e) {
@@ -21,7 +23,7 @@ $('#submit').click(function(e) {
     let challenge = {
         overview: {
             title: $('#challenge-title').val(),
-            logo: $('input[name="challenge-logo"]:checked').val(),
+            logo: `img/logos/${logo}.png`,
             difficulty: $('#challenge-difficulty').val(),
             description: $('#challenge-description').val(),
             tags: $('#challenge-tags').val().split(' '),
