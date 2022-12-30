@@ -246,6 +246,108 @@ function hashtag(e) {
         populateCards(this.getAttribute('data-dbid'), this.value);
     })
 
+// Secondary Select Options //
+
+    $('#species-law').change(function() {
+        if($(this).val() == 16) {
+            $('#species-secondary').html(
+                `<select class="form-select d-inline w-50" aria-label="species-secondary" id="species-secondary-menu"
+                        data-dbid="species-secondary">
+                    <option selected disabled>Select a Species</option>
+                    <option value="19">Human</option>
+                    <option value="20">Vampire</option>
+                    <option value="21">Werewolf</option>
+                    <option value="22">Spellcaster</option>
+                    <option value="23">Alien</option>
+                </select>`
+            ).css('display', 'inline');
+            $('#species-law').css('width', '49%').css('display', 'inline');
+        } else {
+            $('#species-secondary').css('display', 'none');
+            $('#species-law').css('width', '100%');
+        }
+    });
+
+    $('#heir-law').change(function() {
+        if($(this).val() == 12) {
+            $('#heir-secondary').html(
+                `<select class="form-select d-inline w-50" aria-label="heir-secondary" id="heir-secondary-menu"
+                        data-dbid="heir-secondary">
+                    <option selected disabled>Select a Trait</option>
+                    <option value="T01">Active</option>
+                    <option value="T02">Adventurous</option>
+                    <option value="T03">Ambitious</option>
+                    <option value="T04">Animal Enthusiast</option>
+                    <option value="T05">Art Lover</option>
+                    <option value="T06">Bookworm</option>
+                    <option value="T07">Bro</option>
+                    <option value="T08">Cat Lover</option>
+                    <option value="T09">Cheerful</option> 
+                    <option value="T10">Child of the Islands</option>
+                    <option value="T11">Child of the Ocean</option>
+                    <option value="T12">Childish</option>
+                    <option value="T13">Clumsy</option>
+                    <option value="T14">Creative</option>
+                    <option value="T15">Dance Machine</option>
+                    <option value="T16">Dog Lover</option>
+                    <option value="T17">Erratic</option>
+                    <option value="T18">Evil</option>
+                    <option value="T19">Family-oriented</option>
+                    <option value="T20">Foodie</option>
+                    <option value="T21">Freegan</option>
+                    <option value="T22">Geek</option>
+                    <option value="T23">Genius</option>
+                    <option value="T24">Gloomy</option>
+                    <option value="T25">Glutton</option>
+                    <option value="T26">Good</option>
+                    <option value="T27">Green Fiend</option>
+                    <option value="T28">Goofball</option>
+                    <option value="T29">Hates Children</option>
+                    <option value="T30">High Maintenance</option>
+                    <option value="T31">Hot-headed</option>
+                    <option value="T32">Insider</option>
+                    <option value="T33">Jealous</option>
+                    <option value="T34">Kleptomaniac</option>
+                    <option value="T35">Lactose Intolerant</option>
+                    <option value="T36">Lazy</option>
+                    <option value="T37">Loner</option>
+                    <option value="T38">Loves Outdoors</option>
+                    <option value="T39">Loyal</option>
+                    <option value="T40">Maker</option>
+                    <option value="T41">Materialistic</option>
+                    <option value="T42">Mean</option>
+                    <option value="T43">Neat</option>
+                    <option value="T44">Noncommittal</option>
+                    <option value="T45">Music Lover</option>
+                    <option value="T46">Outgoing</option>
+                    <option value="T47">Overachiever</option>
+                    <option value="T48">Recycle Disciple</option>
+                    <option value="T49">Paranoid</option>
+                    <option value="T50">Party Animal</option>
+                    <option value="T51">Perfectionist</option>
+                    <option value="T52">Proper</option>
+                    <option value="T53">Romantic</option>
+                    <option value="T54">Self-absorbed</option>
+                    <option value="T55">Self-assured</option>
+                    <option value="T56">Slob</option>
+                    <option value="T57">Snob</option>
+                    <option value="T58">Socially Awkward</option>
+                    <option value="T59">Squeamish</option>
+                    <option value="T60">Unflirty</option>
+                    <option value="T61">Vegetarian</option>
+                </select>`
+            ).css('display', 'inline');
+            $('#heir-law').css('width', '49%').css('display', 'inline');
+        } else {
+            $('#heir-secondary').css('display', 'none');
+            $('#heir-law').css('width', '100%');
+        }
+    });
+
+let packContent = {
+    
+}
+
 
 
 })();
