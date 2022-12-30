@@ -345,7 +345,126 @@ function hashtag(e) {
     });
 
 let packContent = {
-    
+    EP01: {
+        name: "Get to Work",
+        species: "Alien",
+        traits: []
+    },
+    EP02: {
+        name: "Get Together",
+        species: "",
+        traits: ["Dance Machine", "Insider"]
+    },
+    EP03: {
+        name: "City Living",
+        species: "",
+        traits: ["Unflirty"]
+    },
+    EP04: {
+        name: "Cats & Dogs",
+        species: "",
+        traits: ["Cat Lover", "Dog Lover"]
+    },
+    EP05: {
+        name: "Seasons",
+        species: "",
+        traits: []
+    },
+    EP06: {
+        name: "Get Famous",
+        species: "",
+        traits: ["Self-absorbed"]
+    },
+    EP07: {
+        name: "Island Living",
+        species: "Mermaid",
+        traits: ["Child of the Islands", "Child of the Ocean"]
+    },
+    EP08: {
+        name: "Discover University",
+        species: "",
+        traits: []
+    },
+    EP09: {
+        name: "Eco Living",
+        species: "",
+        traits: ["Freegan", "Green Fiend", "Maker", "Recycle Disciple"]
+    },
+    EP10: {
+        name: "Snowy Escape",
+        species: "",
+        traits: ["Adventurous", "Proper"]
+    },
+    EP11: {
+        name: "Cottage Living",
+        species: "",
+        traits: ["Animal Enthusiast", "Lactose Intolerant"]
+    },
+    EP12: {
+        name: "High School Years",
+        species: "",
+        traits: ["Overachiever", "Party Animal", "Socially Awkward"]
+    },
+    GP01: {
+        name: "Outdoor Retreat",
+        species: "",
+        traits: []
+    },
+    GP02: {
+        name: "Spa Day",
+        species: "",
+        traits: []
+    },
+    GP03: {
+        name: "Dine Out",
+        species: "",
+        traits: []
+    },
+    GP04: {
+        name: "Vampires",
+        species: "Vampire",
+        traits: []
+    },
+    GP05: {
+        name: "Parenthood",
+        species: "",
+        traits: []
+    },
+    GP06: {
+        name: "Jungle Adventure",
+        species: "",
+        traits: []
+    },
+    GP07: {
+        name: "StrangerVille",
+        species: "",
+        traits: []
+    },
+    GP08: {
+        name: "Realm of Magic",
+        species: "Spellcasters",
+        traits: []
+    },
+    GP09: {
+        name: "Journey to Batuu",
+        species: "",
+        traits: []
+    },
+    GP10: {
+        name: "Dream Home Decorator",
+        species: "",
+        traits: []
+    },
+    GP11: {
+        name: "My Wedding Stories",
+        species: "",
+        traits: []
+    },
+    GP12: {
+        name: "Werewolves",
+        species: "Werewolf",
+        traits: []
+    }
 }
 
 
