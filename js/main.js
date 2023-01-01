@@ -408,12 +408,12 @@ let packContent = {
     GP01: {
         name: "Outdoor Retreat",
         species: "",
-        traits: []
+        traits: ["Squeamish"]
     },
     GP02: {
         name: "Spa Day",
         species: "",
-        traits: []
+        traits: ["High Maintenance"]
     },
     GP03: {
         name: "Dine Out",
@@ -438,7 +438,7 @@ let packContent = {
     GP07: {
         name: "StrangerVille",
         species: "",
-        traits: []
+        traits: ["Paranoid"]
     },
     GP08: {
         name: "Realm of Magic",
