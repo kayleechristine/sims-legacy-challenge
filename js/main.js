@@ -375,9 +375,9 @@ function hashtag(e) {
         }
     }
 
-    function enableSpecies(packID) {
-
-    }
+    // function enableSpecies(packID) {
+    //
+    // }
 
     $('#species-law').change(function() {
         if($(this).val() == 16) {
