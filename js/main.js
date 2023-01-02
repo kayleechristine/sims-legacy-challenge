@@ -23,13 +23,17 @@ $('#logo-submit').click(function() {
 })
 
 // Challenge Data
-$('#submit').click(function(e) {
-    e.preventDefault();
 
+$('#pack-container').change(function(e) {
     let packs = [];
     $.each($('input[name="req-pack"]:checked'), function() {
         packs.push($(this).val());
     })
+    console.log(packs);
+})
+
+$('#submit').click(function(e) {
+    e.preventDefault();
 
     let challenge = {
         overview: {
@@ -248,6 +252,133 @@ function hashtag(e) {
 
 // Secondary Select Options //
 
+    let packContent = {
+        EP01: {
+            name: "Get to Work",
+            species: "Alien",
+            traits: []
+        },
+        EP02: {
+            name: "Get Together",
+            species: "",
+            traits: ["Dance Machine", "Insider"]
+        },
+        EP03: {
+            name: "City Living",
+            species: "",
+            traits: ["Unflirty"]
+        },
+        EP04: {
+            name: "Cats & Dogs",
+            species: "",
+            traits: ["Cat Lover", "Dog Lover"]
+        },
+        EP05: {
+            name: "Seasons",
+            species: "",
+            traits: []
+        },
+        EP06: {
+            name: "Get Famous",
+            species: "",
+            traits: ["Self-absorbed"]
+        },
+        EP07: {
+            name: "Island Living",
+            species: "Mermaid",
+            traits: ["Child of the Islands", "Child of the Ocean"]
+        },
+        EP08: {
+            name: "Discover University",
+            species: "",
+            traits: []
+        },
+        EP09: {
+            name: "Eco Living",
+            species: "",
+            traits: ["Freegan", "Green Fiend", "Maker", "Recycle Disciple"]
+        },
+        EP10: {
+            name: "Snowy Escape",
+            species: "",
+            traits: ["Adventurous", "Proper"]
+        },
+        EP11: {
+            name: "Cottage Living",
+            species: "",
+            traits: ["Animal Enthusiast", "Lactose Intolerant"]
+        },
+        EP12: {
+            name: "High School Years",
+            species: "",
+            traits: ["Overachiever", "Party Animal", "Socially Awkward"]
+        },
+        GP01: {
+            name: "Outdoor Retreat",
+            species: "",
+            traits: ["Squeamish"]
+        },
+        GP02: {
+            name: "Spa Day",
+            species: "",
+            traits: ["High Maintenance"]
+        },
+        GP03: {
+            name: "Dine Out",
+            species: "",
+            traits: []
+        },
+        GP04: {
+            name: "Vampires",
+            species: "Vampire",
+            traits: []
+        },
+        GP05: {
+            name: "Parenthood",
+            species: "",
+            traits: []
+        },
+        GP06: {
+            name: "Jungle Adventure",
+            species: "",
+            traits: []
+        },
+        GP07: {
+            name: "StrangerVille",
+            species: "",
+            traits: ["Paranoid"]
+        },
+        GP08: {
+            name: "Realm of Magic",
+            species: "Spellcasters",
+            traits: []
+        },
+        GP09: {
+            name: "Journey to Batuu",
+            species: "",
+            traits: []
+        },
+        GP10: {
+            name: "Dream Home Decorator",
+            species: "",
+            traits: []
+        },
+        GP11: {
+            name: "My Wedding Stories",
+            species: "",
+            traits: []
+        },
+        GP12: {
+            name: "Werewolves",
+            species: "Werewolf",
+            traits: []
+        }
+    }
+
+    function enableSpecies() {
+
+    }
+
     $('#species-law').change(function() {
         if($(this).val() == 16) {
             $('#species-secondary').html(
@@ -255,10 +386,10 @@ function hashtag(e) {
                         data-dbid="species-secondary">
                     <option selected disabled>Select a Species</option>
                     <option value="19">Human</option>
-                    <option value="20">Vampire</option>
-                    <option value="21">Werewolf</option>
-                    <option value="22">Spellcaster</option>
-                    <option value="23">Alien</option>
+                    <option value="20" disabled>Vampire</option>
+                    <option value="21" disabled>Werewolf</option>
+                    <option value="22" disabled>Spellcaster</option>
+                    <option value="23" disabled>Alien</option>
                 </select>`
             ).css('display', 'inline');
             $('#species-law').css('width', '49%').css('display', 'inline');
@@ -266,6 +397,9 @@ function hashtag(e) {
             $('#species-secondary').css('display', 'none');
             $('#species-law').css('width', '100%');
         }
+
+        //TODO: Check against required packs & disable unselected options
+
     });
 
     $('#heir-law').change(function() {
@@ -342,130 +476,10 @@ function hashtag(e) {
             $('#heir-secondary').css('display', 'none');
             $('#heir-law').css('width', '100%');
         }
-    });
 
-let packContent = {
-    EP01: {
-        name: "Get to Work",
-        species: "Alien",
-        traits: []
-    },
-    EP02: {
-        name: "Get Together",
-        species: "",
-        traits: ["Dance Machine", "Insider"]
-    },
-    EP03: {
-        name: "City Living",
-        species: "",
-        traits: ["Unflirty"]
-    },
-    EP04: {
-        name: "Cats & Dogs",
-        species: "",
-        traits: ["Cat Lover", "Dog Lover"]
-    },
-    EP05: {
-        name: "Seasons",
-        species: "",
-        traits: []
-    },
-    EP06: {
-        name: "Get Famous",
-        species: "",
-        traits: ["Self-absorbed"]
-    },
-    EP07: {
-        name: "Island Living",
-        species: "Mermaid",
-        traits: ["Child of the Islands", "Child of the Ocean"]
-    },
-    EP08: {
-        name: "Discover University",
-        species: "",
-        traits: []
-    },
-    EP09: {
-        name: "Eco Living",
-        species: "",
-        traits: ["Freegan", "Green Fiend", "Maker", "Recycle Disciple"]
-    },
-    EP10: {
-        name: "Snowy Escape",
-        species: "",
-        traits: ["Adventurous", "Proper"]
-    },
-    EP11: {
-        name: "Cottage Living",
-        species: "",
-        traits: ["Animal Enthusiast", "Lactose Intolerant"]
-    },
-    EP12: {
-        name: "High School Years",
-        species: "",
-        traits: ["Overachiever", "Party Animal", "Socially Awkward"]
-    },
-    GP01: {
-        name: "Outdoor Retreat",
-        species: "",
-        traits: ["Squeamish"]
-    },
-    GP02: {
-        name: "Spa Day",
-        species: "",
-        traits: ["High Maintenance"]
-    },
-    GP03: {
-        name: "Dine Out",
-        species: "",
-        traits: []
-    },
-    GP04: {
-        name: "Vampires",
-        species: "Vampire",
-        traits: []
-    },
-    GP05: {
-        name: "Parenthood",
-        species: "",
-        traits: []
-    },
-    GP06: {
-        name: "Jungle Adventure",
-        species: "",
-        traits: []
-    },
-    GP07: {
-        name: "StrangerVille",
-        species: "",
-        traits: ["Paranoid"]
-    },
-    GP08: {
-        name: "Realm of Magic",
-        species: "Spellcasters",
-        traits: []
-    },
-    GP09: {
-        name: "Journey to Batuu",
-        species: "",
-        traits: []
-    },
-    GP10: {
-        name: "Dream Home Decorator",
-        species: "",
-        traits: []
-    },
-    GP11: {
-        name: "My Wedding Stories",
-        species: "",
-        traits: []
-    },
-    GP12: {
-        name: "Werewolves",
-        species: "Werewolf",
-        traits: []
-    }
-}
+        //TODO: Check against required packs & disable unselected options
+
+    });
 
 
 
