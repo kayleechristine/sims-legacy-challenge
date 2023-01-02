@@ -23,13 +23,16 @@ $('#logo-submit').click(function() {
 })
 
 // Challenge Data
-
-$('#pack-container').change(function(e) {
-    let packs = [];
+let packs = [];
+$('#pack-container').change(function() {
+    packs = [];
     $.each($('input[name="req-pack"]:checked'), function() {
         packs.push($(this).val());
     })
     console.log(packs);
+    packs.forEach(function(pack) {
+        enableSpecies(pack);
+    })
 })
 
 $('#submit').click(function(e) {
@@ -402,12 +405,11 @@ function hashtag(e) {
     function enableSpecies(packID) {
         packContent.forEach(function(pack) {
             if (pack.id === packID) {
-                console.log(pack.species);
+                $(`#${pack.species}`).removeAttr('disabled');
             }
+            // TODO: Re-disable an option if the pack is deselected
         })
     }
-
-    enableSpecies("GP12");
 
     $('#species-law').change(function() {
         if($(this).val() == 16) {
@@ -416,10 +418,11 @@ function hashtag(e) {
                         data-dbid="species-secondary">
                     <option selected disabled>Select a Species</option>
                     <option value="19">Human</option>
-                    <option value="20" disabled>Vampire</option>
-                    <option value="21" disabled>Werewolf</option>
-                    <option value="22" disabled>Spellcaster</option>
-                    <option value="23" disabled>Alien</option>
+                    <option value="20" id="Vampire" disabled>Vampire</option>
+                    <option value="21" id="Werewolf" disabled>Werewolf</option>
+                    <option value="22" id="Spellcaster" disabled>Spellcaster</option>
+                    <option value="23" id="Mermaid" disabled>Mermaid</option>
+                    <option value="24" id="Alien" disabled>Alien</option>
                 </select>`
             ).css('display', 'inline');
             $('#species-law').css('width', '49%').css('display', 'inline');
@@ -429,6 +432,9 @@ function hashtag(e) {
         }
 
         //TODO: Check against required packs & disable unselected options
+        packs.forEach(function(pack) {
+            enableSpecies(pack);
+        })
 
     });
 
