@@ -375,7 +375,7 @@ function hashtag(e) {
         }
     }
 
-    function enableSpecies() {
+    function enableSpecies(packID) {
 
     }
 
