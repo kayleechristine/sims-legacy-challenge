@@ -252,132 +252,162 @@ function hashtag(e) {
 
 // Secondary Select Options //
 
-    let packContent = {
-        EP01: {
+    let packContent = [
+        {
             name: "Get to Work",
+            id: "EP01",
             species: "Alien",
             traits: []
         },
-        EP02: {
+        {
             name: "Get Together",
+            id: "EP02",
             species: "",
             traits: ["Dance Machine", "Insider"]
         },
-        EP03: {
+        {
             name: "City Living",
+            id: "EP03",
             species: "",
             traits: ["Unflirty"]
         },
-        EP04: {
+        {
             name: "Cats & Dogs",
+            id: "EP04",
             species: "",
             traits: ["Cat Lover", "Dog Lover"]
         },
-        EP05: {
+        {
             name: "Seasons",
+            id: "EP05",
             species: "",
             traits: []
         },
-        EP06: {
+        {
             name: "Get Famous",
+            id: "EP06",
             species: "",
             traits: ["Self-absorbed"]
         },
-        EP07: {
+        {
             name: "Island Living",
+            id: "EP07",
             species: "Mermaid",
             traits: ["Child of the Islands", "Child of the Ocean"]
         },
-        EP08: {
+        {
             name: "Discover University",
+            id: "EP08",
             species: "",
             traits: []
         },
-        EP09: {
+        {
             name: "Eco Living",
+            id: "EP09",
             species: "",
             traits: ["Freegan", "Green Fiend", "Maker", "Recycle Disciple"]
         },
-        EP10: {
+        {
             name: "Snowy Escape",
+            id: "EP10",
             species: "",
             traits: ["Adventurous", "Proper"]
         },
-        EP11: {
+        {
             name: "Cottage Living",
+            id: "EP11",
             species: "",
             traits: ["Animal Enthusiast", "Lactose Intolerant"]
         },
-        EP12: {
+        {
             name: "High School Years",
+            id: "EP12",
             species: "",
             traits: ["Overachiever", "Party Animal", "Socially Awkward"]
         },
-        GP01: {
+        {
             name: "Outdoor Retreat",
+            id: "GP01",
             species: "",
             traits: ["Squeamish"]
         },
-        GP02: {
+        {
             name: "Spa Day",
+            id: "GP02",
             species: "",
             traits: ["High Maintenance"]
         },
-        GP03: {
+        {
             name: "Dine Out",
+            id: "GP03",
             species: "",
             traits: []
         },
-        GP04: {
+        {
             name: "Vampires",
+            id: "GP04",
             species: "Vampire",
             traits: []
         },
-        GP05: {
+        {
             name: "Parenthood",
+            id: "GP05",
             species: "",
             traits: []
         },
-        GP06: {
+        {
             name: "Jungle Adventure",
+            id: "GP06",
             species: "",
             traits: []
         },
-        GP07: {
+        {
             name: "StrangerVille",
+            id: "GP07",
             species: "",
             traits: ["Paranoid"]
         },
-        GP08: {
+        {
             name: "Realm of Magic",
+            id: "GP08",
             species: "Spellcasters",
             traits: []
         },
-        GP09: {
+        {
             name: "Journey to Batuu",
+            id: "GP09",
             species: "",
             traits: []
         },
-        GP10: {
+        {
             name: "Dream Home Decorator",
+            id: "GP10",
             species: "",
             traits: []
         },
-        GP11: {
+        {
             name: "My Wedding Stories",
+            id: "GP11",
             species: "",
             traits: []
         },
-        GP12: {
+        {
             name: "Werewolves",
+            id: "GP12",
             species: "Werewolf",
             traits: []
         }
+    ]
+
+    function enableSpecies(packID) {
+        packContent.forEach(function(pack) {
+            if (pack.id === packID) {
+                console.log(pack.species);
+            }
+        })
     }
 
-    // function enableSpecies(packID) {
-
-    // }
+    enableSpecies("GP12");
 
     $('#species-law').change(function() {
         if($(this).val() == 16) {
