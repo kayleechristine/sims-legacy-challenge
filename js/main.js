@@ -5,7 +5,10 @@
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-// Logo Selection
+//////////// LOGO SELECTION ////////////
+// On first load, a button will be present prompting the user to select a logo. When the button is clicked,
+// a modal with the available logos will appear. After selection, the button will only appear on hover.
+
 let logo;
 $('#logo-submit').click(function() {
     logo = $('input[name="challenge-logo"]:checked').val();
@@ -22,7 +25,10 @@ $('#logo-submit').click(function() {
     );
 })
 
-// Challenge Data
+//////////// CHALLENGE DATA OBJECT ////////////
+// TODO: Save submitted challenges to Glitch
+// Creates an object for the challenge containing
+// the challenge's details.
 let packs = [];
 $('#pack-container').change(function() {
     packs = [];
@@ -66,8 +72,12 @@ $('#submit').click(function(e) {
     console.log(challenge);
 });
 
-// Challenge Tags
+//////////// CHALLENGE TAGS ////////////
 // TODO: Stylize how tags appear in the input field
+// Tags will be added to the challenge object for
+// improved search ability. The tags field will automatically
+// format the input as a hashtag.
+
 let input = document.getElementById('challenge-tags');
 input.addEventListener('keydown', hashtag, false);
 
@@ -253,7 +263,11 @@ function hashtag(e) {
         populateCards(this.getAttribute('data-dbid'), this.value);
     })
 
-// Secondary Select Options //
+//////////// SECONDARY SELECT OPTIONS ////////////
+// TODO: Re-disable an option if the pack is deselected
+// TODO: Enable/disable options for heir law
+// Succession laws which require additional information will
+// have a second drop-down menu generated.
 
     let packContent = [
         {
@@ -407,7 +421,6 @@ function hashtag(e) {
             if (pack.id === packID) {
                 $(`#${pack.species}`).removeAttr('disabled');
             }
-            // TODO: Re-disable an option if the pack is deselected
         })
     }
 
@@ -418,20 +431,20 @@ function hashtag(e) {
                         data-dbid="species-secondary">
                     <option selected disabled>Select a Species</option>
                     <option value="19">Human</option>
-                    <option value="20" id="Vampire" disabled>Vampire</option>
-                    <option value="21" id="Werewolf" disabled>Werewolf</option>
-                    <option value="22" id="Spellcaster" disabled>Spellcaster</option>
-                    <option value="23" id="Mermaid" disabled>Mermaid</option>
-                    <option value="24" id="Alien" disabled>Alien</option>
+                    <option value="20" class="species-option" id="Vampire" disabled>Vampire</option>
+                    <option value="21" class="species-option" id="Werewolf" disabled>Werewolf</option>
+                    <option value="22" class="species-option" id="Spellcaster" disabled>Spellcaster</option>
+                    <option value="23" class="species-option" id="Mermaid" disabled>Mermaid</option>
+                    <option value="24" class="species-option" id="Alien" disabled>Alien</option>
                 </select>`
             ).css('display', 'inline');
             $('#species-law').css('width', '49%').css('display', 'inline');
         } else {
             $('#species-secondary').css('display', 'none');
             $('#species-law').css('width', '100%');
+            $('.species-option').attr('disabled');
         }
 
-        //TODO: Check against required packs & disable unselected options
         packs.forEach(function(pack) {
             enableSpecies(pack);
         })
@@ -516,7 +529,5 @@ function hashtag(e) {
         //TODO: Check against required packs & disable unselected options
 
     });
-
-
 
 })();
