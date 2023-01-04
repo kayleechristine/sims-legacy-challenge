@@ -254,7 +254,6 @@ function hashtag(e) {
     })
 
 //////////// SECONDARY SELECT OPTIONS ////////////
-// TODO: Finish packContent traits
 // Succession laws which require additional information will
 // have a second drop-down menu generated.
 
