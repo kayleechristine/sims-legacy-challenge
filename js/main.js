@@ -29,21 +29,7 @@ $('#logo-submit').click(function() {
 // TODO: Save submitted challenges to Glitch
 // Creates an object for the challenge containing
 // the challenge's details.
-let packs = [];
-$('#pack-container').change(function() {
-    packs = [];
-    $.each($('input[name="req-pack"]:checked'), function() {
-        packs.push($(this).val());
-    })
-    console.log(packs);
-    packs.forEach(function(pack) {
-        enableSpecies(pack);
-    });
-    packs.forEach(function(pack) {
-        console.log("Event listener fired");
-        enableTraits(pack);
-    });
-})
+
 
 $('#submit').click(function(e) {
     e.preventDefault();
@@ -268,8 +254,6 @@ function hashtag(e) {
     })
 
 //////////// SECONDARY SELECT OPTIONS ////////////
-// TODO: Update options if the menu is already populated
-// TODO: Enable/disable options for heir law
 // TODO: Finish packContent traits
 // Succession laws which require additional information will
 // have a second drop-down menu generated.
@@ -430,8 +414,8 @@ function hashtag(e) {
         })
     }
 
-    $('#species-law').change(function() {
-        if($(this).val() == 16) {
+    function speciesDropdown() {
+        if($('#species-law').val() == 16) {
             $('#species-secondary').html(
                 `<select class="form-select d-inline w-50" aria-label="species-secondary" id="species-secondary-menu"
                         data-dbid="species-secondary">
@@ -450,27 +434,25 @@ function hashtag(e) {
             $('#species-law').css('width', '100%');
             $('.species-option').attr('disabled');
         }
-
         packs.forEach(function(pack) {
             enableSpecies(pack);
-        })
+        });
+    }
 
-    });
+    $('#species-law').change(() => speciesDropdown());
 
     function enableTraits(packID) {
         packContent.forEach(function(pack) {
             if (pack.id === packID) {
                 pack.traits.forEach(function(trait){
-                    console.log(trait);
-                    console.log($(`#${trait}`));
-                    $(`#${trait}`).removeAttr('disabled');
+                    $(`#${trait.replaceAll(' ', '-')}`).removeAttr('disabled');
                 })
             }
         })
     }
 
-    $('#heir-law').change(function() {
-        if($(this).val() == 12) {
+    function heirDropdown() {
+        if($('#heir-law').val() == 12) {
             $('#heir-secondary').html(
                 `<select class="form-select d-inline w-50" aria-label="heir-secondary" id="heir-secondary-menu"
                         data-dbid="heir-secondary">
@@ -478,19 +460,19 @@ function hashtag(e) {
                     <option id="Active" value="T01">Active</option>
                     <option disabled id="Adventurous" value="T02">Adventurous</option>
                     <option id="Ambitious" value="T03">Ambitious</option>
-                    <option disabled id="Animal Enthusiast" value="T04">Animal Enthusiast</option>
-                    <option id="Art Lover" value="T05">Art Lover</option>
+                    <option disabled id="Animal-Enthusiast" value="T04">Animal Enthusiast</option>
+                    <option id="Art-Lover" value="T05">Art Lover</option>
                     <option id="Bookworm" value="T06">Bookworm</option>
                     <option id="Bro" value="T07">Bro</option>
-                    <option disabled id="Cat Lover" value="T08">Cat Lover</option>
+                    <option disabled id="Cat-Lover" value="T08">Cat Lover</option>
                     <option id="Cheerful" value="T09">Cheerful</option> 
-                    <option disabled id="Child of the Islands" value="T10">Child of the Islands</option>
-                    <option disabled id="Child of the Ocean" value="T11">Child of the Ocean</option>
+                    <option disabled id="Child-of-the-Islands" value="T10">Child of the Islands</option>
+                    <option disabled id="Child-of-the-Ocean" value="T11">Child of the Ocean</option>
                     <option id="Childish" value="T12">Childish</option>
                     <option id="Clumsy" value="T13">Clumsy</option>
                     <option id="Creative" value="T14">Creative</option>
-                    <option disabled id="Dance Machine" value="T15">Dance Machine</option>
-                    <option disabled id="Dog Lover" value="T16">Dog Lover</option>
+                    <option disabled id="Dance-Machine" value="T15">Dance Machine</option>
+                    <option disabled id="Dog-Lover" value="T16">Dog Lover</option>
                     <option id="Erratic" value="T17">Erratic</option>
                     <option id="Evil" value="T18">Evil</option>
                     <option id="Family-oriented" value="T19">Family-oriented</option>
@@ -501,30 +483,30 @@ function hashtag(e) {
                     <option id="Gloomy" value="T24">Gloomy</option>
                     <option id="Glutton" value="T25">Glutton</option>
                     <option id="Good" value="T26">Good</option>
-                    <option disabled id="Green Fiend" value="T27">Green Fiend</option>
+                    <option disabled id="Green-Fiend" value="T27">Green Fiend</option>
                     <option id="Goofball" value="T28">Goofball</option>
-                    <option id="Hates Children" value="T29">Hates Children</option>
-                    <option disabled id="High Maintenance" value="T30">High Maintenance</option>
+                    <option id="Hates-Children" value="T29">Hates Children</option>
+                    <option disabled id="High-Maintenance" value="T30">High Maintenance</option>
                     <option id="Hot-headed" value="T31">Hot-headed</option>
                     <option disabled id="Insider" value="T32">Insider</option>
                     <option id="Jealous" value="T33">Jealous</option>
                     <option id="Kleptomaniac" value="T34">Kleptomaniac</option>
-                    <option disabled id="Lactose Intolerant" value="T35">Lactose Intolerant</option>
+                    <option disabled id="Lactose-Intolerant" value="T35">Lactose Intolerant</option>
                     <option id="Lazy" value="T36">Lazy</option>
                     <option id="Loner" value="T37">Loner</option>
-                    <option id="Loves Outdoors" value="T38">Loves Outdoors</option>
+                    <option id="Loves-Outdoors" value="T38">Loves Outdoors</option>
                     <option disabled id="Loyal" value="T39">Loyal</option>
                     <option disabled id="Maker" value="T40">Maker</option>
                     <option id="Materialistic" value="T41">Materialistic</option>
                     <option id="Mean" value="T42">Mean</option>
-                    <option id="Music Lover" value="T43">Music Lover</option>
+                    <option id="Music-Lover" value="T43">Music Lover</option>
                     <option id="Neat" value="T44">Neat</option>
                     <option id="Noncommittal" value="T45">Noncommittal</option>
                     <option id="Outgoing" value="T46">Outgoing</option>
                     <option disabled id="Overachiever" value="T47">Overachiever</option>
-                    <option disabled id="Recycle Disciple" value="T48">Recycle Disciple</option>
+                    <option disabled id="Recycle-Disciple" value="T48">Recycle Disciple</option>
                     <option disabled id="Paranoid" value="T49">Paranoid</option>
-                    <option disabled id="Party Animal" value="T50">Party Animal</option>
+                    <option disabled id="Party-Animal" value="T50">Party Animal</option>
                     <option id="Perfectionist" value="T51">Perfectionist</option>
                     <option disabled id="Proper" value="T52">Proper</option>
                     <option id="Romantic" value="T53">Romantic</option>
@@ -532,7 +514,7 @@ function hashtag(e) {
                     <option id="Self-assured" value="T55">Self-assured</option>
                     <option id="Slob" value="T56">Slob</option>
                     <option id="Snob" value="T57">Snob</option>
-                    <option disabled id="Socially Awkward" value="T58">Socially Awkward</option>
+                    <option disabled id="Socially-Awkward" value="T58">Socially Awkward</option>
                     <option disabled id="Squeamish" value="T59">Squeamish</option>
                     <option disabled id="Unflirty" value="T60">Unflirty</option>
                     <option id="Vegetarian" value="T61">Vegetarian</option>
@@ -543,9 +525,21 @@ function hashtag(e) {
             $('#heir-secondary').css('display', 'none');
             $('#heir-law').css('width', '100%');
         }
+        packs.forEach(function(pack) {
+            enableTraits(pack);
+        });
+    }
 
-        //TODO: Check against required packs & disable unselected options
+    $('#heir-law').change(() => heirDropdown());
 
-    });
+    let packs = [];
+    $('#pack-container').change(function() {
+        packs = [];
+        $.each($('input[name="req-pack"]:checked'), function() {
+            packs.push($(this).val());
+        })
+        speciesDropdown();
+        heirDropdown();
+    })
 
 })();
