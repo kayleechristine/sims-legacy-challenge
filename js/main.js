@@ -44,10 +44,10 @@ $('#submit').click(function(e) {
             packs
         },
         succession: {
-            inheritance: $('#inheritance-law').val(),
-            bloodline: $('#bloodline-law').val(),
-            heir: $('#heir-law').val(),
-            species: $('#species-law').val()
+            inheritance: $('.inheritance').attr("name"),
+            bloodline: $('.bloodline').attr("name"),
+            heir: $('.heir').attr("name"),
+            species: $('.species').attr("name")
         },
         generations: { // TODO: Push generation data to challenge object
             1: {
@@ -419,12 +419,12 @@ function hashtag(e) {
                 `<select class="form-select d-inline w-50" aria-label="species-secondary" id="species-secondary-menu"
                         data-dbid="species-secondary">
                     <option selected disabled>Select a Species</option>
-                    <option value="19">Human</option>
-                    <option value="20" class="species-option" id="Vampire" disabled>Vampire</option>
-                    <option value="21" class="species-option" id="Werewolf" disabled>Werewolf</option>
-                    <option value="22" class="species-option" id="Spellcaster" disabled>Spellcaster</option>
-                    <option value="23" class="species-option" id="Mermaid" disabled>Mermaid</option>
-                    <option value="24" class="species-option" id="Alien" disabled>Alien</option>
+                    <option name="human" value="19">Human</option>
+                    <option name="vampire" value="20" class="species-option" id="Vampire" disabled>Vampire</option>
+                    <option name="werewolf" value="21" class="species-option" id="Werewolf" disabled>Werewolf</option>
+                    <option name="spellcaster" value="22" class="species-option" id="Spellcaster" disabled>Spellcaster</option>
+                    <option name="mermaid" value="23" class="species-option" id="Mermaid" disabled>Mermaid</option>
+                    <option name="alien" value="24" class="species-option" id="Alien" disabled>Alien</option>
                 </select>`
             ).css('display', 'inline');
             $('#species-law').css('width', '49%').css('display', 'inline');
