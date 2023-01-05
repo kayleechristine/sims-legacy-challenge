@@ -30,7 +30,6 @@ $('#logo-submit').click(function() {
 // Creates an object for the challenge containing
 // the challenge's details.
 
-
 $('#submit').click(function(e) {
     e.preventDefault();
 
@@ -89,7 +88,6 @@ function hashtag(e) {
     }
 }
 //////////// SUCCESSION LAW CARDS ////////////
-// TODO: Add all laws to succession laws object
 // When the succession laws are selected in the form's drop-down menu,
 // cards with the name and description of each law replace the placeholders.
 
