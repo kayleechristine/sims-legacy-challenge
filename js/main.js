@@ -37,17 +37,17 @@ $('#submit').click(function(e) {
     let challenge = {
         overview: {
             title: $('#challenge-title').val(),
-            logo: `img/logos/${logo}.png`,
+            logo,
             difficulty: $('#challenge-difficulty').val(),
             description: $('#challenge-description').val(),
             tags: $('#challenge-tags').val().split(' '),
             packs
         },
         succession: {
-            inheritance: $('.inheritance').attr("name"),
-            bloodline: $('.bloodline').attr("name"),
-            heir: $('.heir').attr("name"),
-            species: $('.species').attr("name")
+            inheritance: $('.inheritance:selected').attr("name"),
+            bloodline: $('.bloodline:selected').attr("name"),
+            heir: $('.heir:selected').attr("name"),
+            species: $('.species:selected').attr("name")
         },
         generations: { // TODO: Push generation data to challenge object
             1: {
