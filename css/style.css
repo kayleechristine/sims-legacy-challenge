@@ -166,13 +166,8 @@ h1 {
 /*    width: 70%;*/
 /*    border-radius: 5px;*/
 /*}*/
-body {
-    font-family: sans-serif;
-    font-size: 85%;
-    text-align: top;
-}
 fieldset {
-    width: 93.5%;
+    width: 100%;
 }
 fieldset.col {
     display: inline-block;
@@ -183,4 +178,5 @@ label, input {
     display: inline-block;
     width: 40%;
     height: 2em;
+    border-radius: 5px;
 }

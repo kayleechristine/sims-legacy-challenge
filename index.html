@@ -459,7 +459,13 @@
                 </div>
                 <div class="col-1">
                     <label class="visually-hidden" for="gen-color">Color Picker</label>
-                    <input type="color" class="form-control" id="gen-color">
+                    <input type="color" class="form-control" id="gen-color" list="greens">
+                    <datalist id="greens">
+                        <option value="#a7ff83">Lime</option>
+                        <option value="#28b62d">Kelley</option>
+                        <option value="#24b978">Seafoam</option>
+                        <option value="#116971">Teal</option>
+                    </datalist>
                 </div>
             </div>
             <div class="row mt-3">
@@ -487,20 +493,6 @@
                 </div>
             </div>
         </form>
-            <fieldset class="col">
-                <legend>Color element 3</legend>
-                <label for="excolor3">Color: </label>
-                <input type="color" id="excolor3" name="excolor3" list="rainbow" value="#FF0000">
-            </fieldset>
-            <datalist id="rainbow">
-                <option value="#FF0000">Red</option>
-                <option value="#FFA500">Orange</option>
-                <option value="#FFFF00">Yellow</option>
-                <option value="#008000">Green</option>
-                <option value="#0000FF">Blue</option>
-                <option value="#4B0082">Indigo</option>
-                <option value="#EE82EE">Violet</option>
-            </datalist>
             <button type="submit" class="btn btn-success mb-3" style="width: 100px" id="submit">Submit</button>
         </form>
 
