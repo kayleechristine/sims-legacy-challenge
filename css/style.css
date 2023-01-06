@@ -159,3 +159,28 @@ h1 {
     justify-self: center;
     align-self: center;
 }
+
+/* Color Picker */
+/*input[type="color"] {*/
+/*    height: 100%;*/
+/*    width: 70%;*/
+/*    border-radius: 5px;*/
+/*}*/
+body {
+    font-family: sans-serif;
+    font-size: 85%;
+    text-align: top;
+}
+fieldset {
+    width: 93.5%;
+}
+fieldset.col {
+    display: inline-block;
+    width: 45%;
+    padding-bottom: 8em;
+}
+label, input {
+    display: inline-block;
+    width: 40%;
+    height: 2em;
+}
