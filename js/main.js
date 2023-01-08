@@ -51,7 +51,7 @@ $('#submit').click(function(e) {
         generations: { // TODO: Push generation data to challenge object
             1: {
                 title: '',
-                color: '',
+                color: $('#gen-color').val(),
                 description: '',
                 requirements: '',
                 milestones: '',
