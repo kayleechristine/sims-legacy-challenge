@@ -451,48 +451,90 @@
         <!--TODO: Requirements & Milestones-->
         <!--TODO: Rearrange/remove functionality-->
         <!--TODO: Color picker-->
-        <form class="row gx-3 gy-2 align-items-center">
-            <div class="row mt-3">
-                <div class="col-3">
-                    <label class="visually-hidden" for="gen-title">Title</label>
-                    <input type="text" class="form-control" id="gen-title" placeholder="Generation Title">
+
+            <div class="row d-flex">
+                <div class="col-6 mt-3 d-flex flex-column" id="gen-form">
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="visually-hidden" for="gen-title">Title</label>
+                            <input type="text" class="form-control" id="gen-title" placeholder="Generation Title">
+                        </div>
+                        <div class="col-2">
+                            <label class="visually-hidden" for="gen-color">Color Picker</label>
+                            <input type="color" class="form-control" id="gen-color" list="greens">
+                            <datalist id="greens">
+                                <option value="#a7ff83">Lime</option>
+                                <option value="#28b62d">Kelley</option>
+                                <option value="#24b978">Seafoam</option>
+                                <option value="#116971">Teal</option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <label class="visually-hidden" for="gen-description">Description</label>
+                        <textarea type="text" class="form-control input-group" id="gen-description" placeholder="Generation Description"></textarea>
+                        <h4 class="mt-3" style="display: inline;">Requirements</h4>
+                        <button type="button" id="add-req" class="btn btn-success btn-sm mb-3 mt-2" style="border-radius: 50%;">+</button>
+                        <label class="visually-hidden" for="req-1">Requirements</label>
+                        <div class="input-group">
+                            <button type="button" class="input-group-text">1</button>
+                            <input type="text" class="form-control" id="req-1" placeholder="Enter a requirement...">
+                        </div>
+                        <label class="visually-hidden" for="req-2">Requirements</label>
+                        <div class="input-group">
+                            <button type="button" id="num-2" class="input-group-text">2</button>
+                            <input type="text" class="form-control" id="req-2" placeholder="Enter a requirement...">
+                        </div>
+                        <h4 class="mt-3" style="display: inline;">Milestones</h4>
+                        <button type="button" id="add-milestone" class="btn btn-light btn-sm mb-3 mt-2" style="border-radius: 50%;">+</button>
+                        <label class="visually-hidden" for="milestone">Milestones</label>
+                        <div class="input-group">
+                            <div class="input-group-text">+</div>
+                            <input type="text" class="form-control" id="milestone" placeholder="Enter a milestone...">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-1">
-                    <label class="visually-hidden" for="gen-color">Color Picker</label>
-                    <input type="color" class="form-control" id="gen-color" list="greens">
-                    <datalist id="greens">
-                        <option value="#a7ff83">Lime</option>
-                        <option value="#28b62d">Kelley</option>
-                        <option value="#24b978">Seafoam</option>
-                        <option value="#116971">Teal</option>
-                    </datalist>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-6">
-                    <label class="visually-hidden" for="gen-description">Description</label>
-                    <textarea type="text" class="form-control input-group" id="gen-description" placeholder="Generation Description"></textarea>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-6">
-                    <label class="visually-hidden" for="requirement">Requirements</label>
-                    <div class="input-group">
-                        <div class="input-group-text">+</div>
-                        <input type="text" class="form-control" id="requirement" placeholder="Enter a requirement...">
+                <div class="col-6" id="gen-accordian">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Accordion Item #1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Accordion Item #2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Accordion Item #3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-3 mb-3">
-                <div class="col-6">
-                    <label class="visually-hidden" for="milestone">Milestones</label>
-                    <div class="input-group">
-                        <div class="input-group-text">+</div>
-                        <input type="text" class="form-control" id="milestone" placeholder="Enter a milestone...">
-                    </div>
-                </div>
-            </div>
-        </form>
             <button type="submit" class="btn btn-success mb-3" style="width: 100px" id="submit">Submit</button>
         </form>
 
@@ -506,7 +548,7 @@
 
         <div id="card-container" style="display: flex; justify-content: space-evenly;"></div>
 
-        </div>
+    </div>
     </main>
 
     <!--JavaScript Bundle with Popper-->

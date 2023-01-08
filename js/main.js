@@ -539,4 +539,17 @@ function hashtag(e) {
         heirDropdown();
     })
 
+//////////// GENERATION REQUIREMENTS & MILESTONES ////////////
+// Succession laws which require additional information will
+// have a second drop-down menu generated.
+
+    function addRequirement() {
+        console.log("clicked");
+
+
+
+    }
+
+    $('#add-req').click(() => addRequirement());
+
 })();
