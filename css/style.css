@@ -161,22 +161,8 @@ h1 {
 }
 
 /* Color Picker */
-/*input[type="color"] {*/
-/*    height: 100%;*/
-/*    width: 70%;*/
-/*    border-radius: 5px;*/
-/*}*/
-fieldset {
-    width: 100%;
-}
-fieldset.col {
-    display: inline-block;
-    width: 45%;
-    padding-bottom: 8em;
-}
-label, input {
-    display: inline-block;
-    width: 40%;
-    height: 2em;
+input[type="color"] {
+    height: 100%;
+    width: 70%;
     border-radius: 5px;
 }
