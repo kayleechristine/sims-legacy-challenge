@@ -48,15 +48,15 @@ $('#submit').click(function(e) {
             heir: $('.heir:selected').attr("name"),
             species: $('.species:selected').attr("name")
         },
-        generations: { // TODO: Push generation data to challenge object
-            1: {
-                title: '',
+        generations: [ // TODO: Push generation data to challenge object
+            {
+                title: $('#gen-title').val(),
                 color: $('#gen-color').val(),
-                description: '',
+                description: $('#gen-description').val(),
                 requirements: '',
                 milestones: '',
             }
-        }
+        ]
     }
     console.log(challenge);
 });
