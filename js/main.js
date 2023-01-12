@@ -543,11 +543,21 @@ function hashtag(e) {
 // Succession laws which require additional information will
 // have a second drop-down menu generated.
 
+    let num = 1;
     function addRequirement() {
         console.log("clicked");
-
-
-
+        console.log();
+        num++;
+        let html = $('#requirement-list').html();
+        // for (let i = 1; i <= num; i++) {
+            html += `
+                <label class="visually-hidden" for="milestone-${num}">Milestones</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-text">${num}</div>
+                    <input type="text" class="form-control" id="milestone-${num}" placeholder="Enter a milestone...">
+                </div>`;
+        //}
+        $('#requirement-list').html(html);
     }
 
     $('#add-req').click(() => addRequirement());
