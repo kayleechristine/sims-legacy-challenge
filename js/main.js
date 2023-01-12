@@ -562,4 +562,19 @@ function hashtag(e) {
 
     $('#add-req').click(() => addRequirement());
 
+    function changeColor() {
+        console.log("Changing color...");
+        // console.log($(this).data("gen"));
+        let num = $(this).attr('data-gen');
+        // console.log(num);
+        let color = $(`#gen-${num}-color`).val();
+        console.log(color);
+        $(`#gen-${num}-header`).css('background-color', color);
+        // let color = $(`#gen-1-color`).val();
+        // console.log(color);
+        // $(`#gen-1-header`).css('background-color', color);
+    }
+
+    $('.gen-color').change(() => changeColor());
+
 })();
