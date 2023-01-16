@@ -549,20 +549,21 @@ function hashtag(e) {
         console.log();
         num++;
         let html = $('#requirement-list').html();
-        // for (let i = 1; i <= num; i++) {
+        // wrap in a for loop to limit the amount of milestones
             html += `
                 <label class="visually-hidden" for="milestone-${num}">Milestones</label>
                 <div class="input-group mb-2">
                     <div class="input-group-text">${num}</div>
                     <input type="text" class="form-control" id="milestone-${num}" placeholder="Enter a milestone...">
                 </div>`;
-        //}
         $('#requirement-list').html(html);
     }
 
     $('#add-req').click(() => addRequirement());
 
     function changeColor() {
+        // changeColor limited to pre-defined colors until 'this' can be fixed
+        // TODO: more colors
         console.log("Changing color...");
         // console.log($(this));
         // let num = $(this).data('gen');
