@@ -542,6 +542,8 @@ function hashtag(e) {
 //////////// GENERATION REQUIREMENTS & MILESTONES ////////////
 // Succession laws which require additional information will
 // have a second drop-down menu generated.
+// TODO: Add more colors for the changeColor function
+// TODO: Change heading colors for each generation section
 
     let num = 1;
     function addRequirement() {
@@ -563,8 +565,6 @@ function hashtag(e) {
 
     function changeColor() {
         // changeColor limited to pre-defined colors until 'this' can be fixed
-        // TODO: more colors
-        // TODO: change colors for each generation
         console.log("Changing color...");
         // console.log($(this));
         // let num = $(this).data('gen');
