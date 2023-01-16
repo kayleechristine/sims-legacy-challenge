@@ -577,8 +577,6 @@ function hashtag(e) {
         $(`#gen-1-header`).css('background-color', color);
     }
 
-    $('.gen-color').change(function (){
-        changeColor();
-    });
+    $('.gen-color').change(() => changeColor());
 
 })();
