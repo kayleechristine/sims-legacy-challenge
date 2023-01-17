@@ -564,7 +564,7 @@ function hashtag(e) {
     $('#add-req').click(() => addRequirement());
 
     function changeColor() {
-        // changeColor limited to pre-defined colors until 'this' can be fixed
+        // Issue: changeColor limited to pre-defined colors until 'this' can be fixed
         console.log("Changing color...");
         // console.log($(this));
         // let num = $(this).data('gen');
