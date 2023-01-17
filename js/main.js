@@ -551,7 +551,7 @@ function hashtag(e) {
         console.log();
         num++;
         let html = $('#requirement-list').html();
-        // wrap in a for loop to limit the amount of milestones
+        // TODO: wrap in a for loop to limit the amount of milestones
             html += `
                 <label class="visually-hidden" for="milestone-${num}">Milestones</label>
                 <div class="input-group mb-2">
