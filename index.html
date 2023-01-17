@@ -15,6 +15,7 @@
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/e8ac724fbe.js" crossorigin="anonymous"></script>
     <!--Custom CSS-->
+    <link rel="stylesheet" href="swatchy/swatchy.css" />
     <link rel="stylesheet" href="css/bootstrap-lumen.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -51,6 +52,12 @@
         <h2>Create a Legacy Challenge</h2><hr>
         <form class="align-items-center">
         <!--TODO: Make dynamic for different screen sizes-->
+
+<div>
+    <button type="button" class="swatchy-trigger">Select a Color</button>
+    <input type="text" class="swatchy-output" disabled>
+</div>
+
 
         <h3>Required Packs:</h3>
         <span>Select which packs will be required for your challenge.</span>
@@ -470,21 +477,30 @@
                                                 <label class="visually-hidden" for="gen-title">Title</label>
                                                 <input type="text" class="form-control" id="gen-title" placeholder="Generation Title">
                                             </div>
-                                            <div class="col-2">
+                                            <div class="col-6 d-flex">
+
+<!--                                                <input type="text" class="form-control swatchy-output swatchy-display" id="gen-1-color" placeholder="Generation Color">-->
+<!--                                                <input type="color" class="form-control gen-color" data-gen="1" id="gen-1-color" list="colors">-->
+<!--                                                <datalist id="colors">-->
+<!--                                                    <option class="colors">#D9ED92</option>-->
+<!--                                                    <option>#B5E48C</option>-->
+<!--                                                    <option>#99D98C</option>-->
+<!--                                                    <option>#76C893</option>-->
+<!--                                                    <option>#52B69A</option>-->
+<!--                                                    <option>#34A0A4</option>-->
+<!--                                                    <option>#168AAD</option>-->
+<!--                                                    <option>#1A759F</option>-->
+<!--                                                    <option>#1E6091</option>-->
+<!--                                                    <option>#184E77</option>-->
+<!--                                                </datalist>-->
+<!--                                                <button class="swatchy-button swatchy-trigger">-->
+<!--                                                    <span class="swatchy-button-top">Select a Color</span>-->
+<!--                                                </button>-->
+
+                                                <button type="button" class="btn btn-light swatchy-trigger">Select a Color</button>
                                                 <label class="visually-hidden" for="gen-1-color">Color Picker</label>
-                                                <input type="color" class="form-control gen-color" data-gen="1" id="gen-1-color" list="colors">
-                                                <datalist id="colors">
-                                                    <option>#D9ED92</option>
-                                                    <option>#B5E48C</option>
-                                                    <option>#99D98C</option>
-                                                    <option>#76C893</option>
-                                                    <option>#52B69A</option>
-                                                    <option>#34A0A4</option>
-                                                    <option>#168AAD</option>
-                                                    <option>#1A759F</option>
-                                                    <option>#1E6091</option>
-                                                    <option>#184E77</option>
-                                                </datalist>
+                                                <input type="text" id="gen-1-color" class="form-control swatchy-output" disabled>
+
                                             </div>
                                         </div>
                                         <div class="col-12 mt-3">
@@ -565,6 +581,7 @@
     <!--jQuery Script-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!--Custom JavaScript-->
+    <script src="swatchy/swatchy.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

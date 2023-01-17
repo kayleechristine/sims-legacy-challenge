@@ -1,6 +1,8 @@
 "use strict";
 (function(){
 
+    new Swatchy();
+
 // Bootstrap Tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
@@ -566,7 +568,6 @@ function hashtag(e) {
     function changeColor() {
         // Issue: changeColor limited to pre-defined colors until 'this' can be fixed
         console.log("Changing color...");
-        // console.log($(this));
         // let num = $(this).data('gen');
         // console.log(num);
         // let color = $(`#gen-${num}-color`).val();
@@ -577,6 +578,6 @@ function hashtag(e) {
         $(`#gen-1-header`).css('background-color', color);
     }
 
-    $('.gen-color').change(() => changeColor());
+    $('.swatchy-swatches').click(() => changeColor());
 
 })();
