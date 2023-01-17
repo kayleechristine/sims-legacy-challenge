@@ -34,7 +34,6 @@ function Swatchy(
     if (!hasSwatchyRun) {
         hasSwatchyRun = true;
         let swatchyCount = document.querySelectorAll('.swatchy-trigger');
-        console.log(swatchyCount.length);
 
         for (let id = 0; id < swatchyCount.length; id++) {
 
@@ -46,8 +45,6 @@ function Swatchy(
             document.querySelectorAll('.swatchy-trigger').item(id)
             document.querySelectorAll('.swatchy-trigger').item(id).addEventListener('click', togglePopup)
             output = document.querySelectorAll('.swatchy-output').item(id)
-            console.log('id: ', id);
-
 
             // create popup element
             container = document.createElement("div")
@@ -78,13 +75,9 @@ function Swatchy(
 
             function selectColor(e) {
                 let input = document.querySelectorAll('.swatchy-output').item(id)
-                console.log(input);
                 let newColor = e.target.getAttribute('data-swatchy-color')
                 let genID = output.getAttribute('id').replace('color', 'header');
-                console.log('gen id: ', genID);
                 let header = document.querySelector(`#${genID}`);
-                console.log('header: ', header);
-                console.log(document.querySelector(`#${genID}`));
                 header.setAttribute('style', 'background-color: ' + newColor + ';');
                 input.setAttribute('value', newColor)
                 input.setAttribute('data-swatchy-color', newColor)

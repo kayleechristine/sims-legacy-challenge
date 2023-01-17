@@ -1,8 +1,6 @@
 "use strict";
 (function(){
 
-    new Swatchy();
-
 // Bootstrap Tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
@@ -544,45 +542,39 @@ function hashtag(e) {
 //////////// GENERATION REQUIREMENTS & MILESTONES ////////////
 // Succession laws which require additional information will
 // have a second drop-down menu generated.
-// TODO: Add more colors for the changeColor function
-// TODO: Change heading colors for each generation section
+// TODO: Add generations
+// TODO: Rearrange / delete generations
+// TODO: Add milestones / requirements
+// TODO: Delete milestones & requirements
 
-    function addRequirement() {
+    function addRequirement(id) {
         let num = 1;
-        console.log("clicked");
-        console.log($(this).html());
+        console.log('addRequirement fired: ', id);
         num++;
-        let html = $('#requirement-list').html();
+        let html = $(`#gen-${id}-req`).html();
+        // TODO: log how many req there currently are as a data-dbid
+        console.log(html);
         // TODO: wrap in a for loop to limit the amount of milestones
             html += `
-                <label class="visually-hidden" for="milestone-${num}">Milestones</label>
+                <label class="visually-hidden">Milestones</label>
                 <div class="input-group mb-2">
                     <div class="input-group-text">${num}</div>
-                    <input type="text" class="form-control" id="milestone-${num}" placeholder="Enter a milestone...">
+                    <input type="text" class="form-control" placeholder="Enter a milestone...">
                 </div>`;
-        $('#requirement-list').html(html);
+        $(`#gen-${id}-req`).html(html);
     }
+    //
+    // $('#add-req').click(() => addRequirement());
 
-    $('#add-req').click(() => addRequirement());
-    //
-    // function changeColor() {
-    //     // Issue: changeColor limited to pre-defined colors until 'this' can be fixed
-    //     console.log("Changing color...");
-    //     // let num = $(this).data('gen');
-    //     // console.log(num);
-    //     // let color = $(`#gen-${num}-color`).val();
-    //     // console.log(color);
-    //     // $(`#gen-${num}-header`).css('background-color', color);
-    //     let color = $(`#gen-1-color`).val();
-    //     console.log(color);
-    //     $(`#gen-1-header`).css('background-color', color);
-    // }
-    //
-    // $('.swatchy-swatches').click(() => changeColor());
-    //
-    // // $('input#gen-1-color').on('change', function() {
-    // //     console.log("changed");
-    // //     console.log(this);
-    // // });
+    $('.add-req').click((event) => {
+        console.log();
+        addRequirement($(event.currentTarget).attr('data-gen'));
+    });
+
+    $('.add-ms').click((event) => {
+        console.log($(event.currentTarget).attr('data-gen'));
+    });
+
+    new Swatchy();
 
 })();
