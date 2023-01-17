@@ -161,11 +161,6 @@ h1 {
 }
 
 /* Color Picker */
-input[type="color"] {
-    height: 100%;
-    width: 70%;
-    border-radius: 5px;
+.swatchy-output {
+    transition: 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
 }
-
-
-
