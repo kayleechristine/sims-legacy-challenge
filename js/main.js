@@ -547,10 +547,10 @@ function hashtag(e) {
 // TODO: Add more colors for the changeColor function
 // TODO: Change heading colors for each generation section
 
-    let num = 1;
     function addRequirement() {
+        let num = 1;
         console.log("clicked");
-        console.log();
+        console.log($(this).html());
         num++;
         let html = $('#requirement-list').html();
         // TODO: wrap in a for loop to limit the amount of milestones
@@ -564,20 +564,25 @@ function hashtag(e) {
     }
 
     $('#add-req').click(() => addRequirement());
-
-    function changeColor() {
-        // Issue: changeColor limited to pre-defined colors until 'this' can be fixed
-        console.log("Changing color...");
-        // let num = $(this).data('gen');
-        // console.log(num);
-        // let color = $(`#gen-${num}-color`).val();
-        // console.log(color);
-        // $(`#gen-${num}-header`).css('background-color', color);
-        let color = $(`#gen-1-color`).val();
-        console.log(color);
-        $(`#gen-1-header`).css('background-color', color);
-    }
-
-    $('.swatchy-swatches').click(() => changeColor());
+    //
+    // function changeColor() {
+    //     // Issue: changeColor limited to pre-defined colors until 'this' can be fixed
+    //     console.log("Changing color...");
+    //     // let num = $(this).data('gen');
+    //     // console.log(num);
+    //     // let color = $(`#gen-${num}-color`).val();
+    //     // console.log(color);
+    //     // $(`#gen-${num}-header`).css('background-color', color);
+    //     let color = $(`#gen-1-color`).val();
+    //     console.log(color);
+    //     $(`#gen-1-header`).css('background-color', color);
+    // }
+    //
+    // $('.swatchy-swatches').click(() => changeColor());
+    //
+    // // $('input#gen-1-color').on('change', function() {
+    // //     console.log("changed");
+    // //     console.log(this);
+    // // });
 
 })();

@@ -53,12 +53,6 @@
         <form class="align-items-center">
         <!--TODO: Make dynamic for different screen sizes-->
 
-<div>
-    <button type="button" class="swatchy-trigger">Select a Color</button>
-    <input type="text" class="swatchy-output" disabled>
-</div>
-
-
         <h3>Required Packs:</h3>
         <span>Select which packs will be required for your challenge.</span>
             <div class="mt-3 ps-4 pe-4" id="pack-container">
@@ -455,10 +449,8 @@
 
         <h3>Milestones:</h3>
         <span>Specify the requirements and milestones for each generation.</span>
-        <!--TODO: Numbered generation tabs-->
-        <!--TODO: Requirements & Milestones-->
+        <!--TODO: Add generation tabs-->
         <!--TODO: Rearrange/remove functionality-->
-        <!--TODO: Color picker-->
 
             <div class="row d-flex justify-content-center">
                 <div class="col-11 pt-3 pb-3" id="gen-accordian">
@@ -471,60 +463,40 @@
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body d-flex justify-content-center">
-                                    <div class="col-11 mt-3 d-flex flex-column" id="gen-form">
+                                    <div class="col-11 mt-3 d-flex flex-column">
                                         <div class="row">
                                             <div class="col-6">
-                                                <label class="visually-hidden" for="gen-title">Title</label>
-                                                <input type="text" class="form-control" id="gen-title" placeholder="Generation Title">
+                                                <label class="visually-hidden" for="gen-1-title">Title</label>
+                                                <input type="text" class="form-control" id="gen-1-title" placeholder="Generation Title">
                                             </div>
                                             <div class="col-6 d-flex">
-
-<!--                                                <input type="text" class="form-control swatchy-output swatchy-display" id="gen-1-color" placeholder="Generation Color">-->
-<!--                                                <input type="color" class="form-control gen-color" data-gen="1" id="gen-1-color" list="colors">-->
-<!--                                                <datalist id="colors">-->
-<!--                                                    <option class="colors">#D9ED92</option>-->
-<!--                                                    <option>#B5E48C</option>-->
-<!--                                                    <option>#99D98C</option>-->
-<!--                                                    <option>#76C893</option>-->
-<!--                                                    <option>#52B69A</option>-->
-<!--                                                    <option>#34A0A4</option>-->
-<!--                                                    <option>#168AAD</option>-->
-<!--                                                    <option>#1A759F</option>-->
-<!--                                                    <option>#1E6091</option>-->
-<!--                                                    <option>#184E77</option>-->
-<!--                                                </datalist>-->
-<!--                                                <button class="swatchy-button swatchy-trigger">-->
-<!--                                                    <span class="swatchy-button-top">Select a Color</span>-->
-<!--                                                </button>-->
-
                                                 <button type="button" class="btn btn-light swatchy-trigger">Select a Color</button>
                                                 <label class="visually-hidden" for="gen-1-color">Color Picker</label>
                                                 <input type="text" id="gen-1-color" class="form-control swatchy-output" disabled>
-
                                             </div>
                                         </div>
                                         <div class="col-12 mt-3">
-                                            <label class="visually-hidden" for="gen-description">Description</label>
-                                            <textarea type="text" class="form-control input-group" id="gen-description" placeholder="Generation Description"></textarea>
+                                            <label class="visually-hidden" for="gen-1-description">Description</label>
+                                            <textarea type="text" class="form-control input-group" id="gen-1-description" placeholder="Generation Description"></textarea>
                                             <div>
-                                                <button type="button" id="add-req" class="btn btn-light btn-sm mb-3 mt-2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <button type="button" id="gen-1-add-req" class="btn btn-light btn-sm mb-3 mt-2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
                                                 <h4 class="d-inline ms-1 mt-2">Requirements</h4>
-                                                <div id="requirement-list">
-                                                    <label class="visually-hidden" for="req-1">Requirements</label>
+                                                <div id="gen-1-req">
+                                                    <label class="visually-hidden">Requirements</label>
                                                     <div class="input-group mb-2">
                                                         <button type="button" class="input-group-text">1</button>
-                                                        <input type="text" class="form-control" id="req-1" placeholder="Enter a requirement...">
+                                                        <input type="text" class="form-control" placeholder="Enter a requirement...">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div>
-                                                <button type="button" id="add-milestone" class="btn btn-light btn-sm mb-3 mt-2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <button type="button" id="gen-1-add-ms" class="btn btn-light btn-sm mb-3 mt-2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
                                                 <h4 class="d-inline ms-1">Milestones</h4>
-                                                <div id="milestone-list">
-                                                    <label class="visually-hidden" for="milestone">Milestones</label>
+                                                <div id="gen-1-ms">
+                                                    <label class="visually-hidden">Milestones</label>
                                                     <div class="input-group mb-2">
                                                         <div class="input-group-text">1</div>
-                                                        <input type="text" class="form-control" id="milestone" placeholder="Enter a milestone...">
+                                                        <input type="text" class="form-control" placeholder="Enter a milestone...">
                                                     </div>
                                                 </div>
                                             </div>
@@ -535,25 +507,101 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="accordion-button collapsed" id="gen-2-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="">
                                     Generation 2
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                <div class="accordion-body d-flex justify-content-center">
+                                    <div class="col-11 mt-3 d-flex flex-column">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label class="visually-hidden" for="gen-2-title">Title</label>
+                                                <input type="text" class="form-control" id="gen-2-title" placeholder="Generation Title">
+                                            </div>
+                                            <div class="col-6 d-flex">
+                                                <button type="button" class="btn btn-light swatchy-trigger">Select a Color</button>
+                                                <label class="visually-hidden" for="gen-2-color">Color Picker</label>
+                                                <input type="text" id="gen-2-color" class="form-control swatchy-output" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <label class="visually-hidden" for="gen-2-description">Description</label>
+                                            <textarea type="text" class="form-control input-group" id="gen-2-description" placeholder="Generation Description"></textarea>
+                                            <div>
+                                                <button type="button" id="gen-2-add-req" class="btn btn-light btn-sm mb-3 mt-2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <h4 class="d-inline ms-1 mt-2">Requirements</h4>
+                                                <div id="gen-2-req">
+                                                    <label class="visually-hidden">Requirements</label>
+                                                    <div class="input-group mb-2">
+                                                        <button type="button" class="input-group-text">1</button>
+                                                        <input type="text" class="form-control" placeholder="Enter a requirement...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button type="button" id="gen-2-add-ms" class="btn btn-light btn-sm mb-3 mt-2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <h4 class="d-inline ms-1">Milestones</h4>
+                                                <div id="gen-2-ms">
+                                                    <label class="visually-hidden">Milestones</label>
+                                                    <div class="input-group mb-2">
+                                                        <div class="input-group-text">1</div>
+                                                        <input type="text" class="form-control" placeholder="Enter a milestone...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="accordion-button collapsed" id="gen-3-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="">
                                     Generation 3
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                <div class="accordion-body d-flex justify-content-center">
+                                    <div class="col-11 mt-3 d-flex flex-column">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label class="visually-hidden" for="gen-3-title">Title</label>
+                                                <input type="text" class="form-control" id="gen-3-title" placeholder="Generation Title">
+                                            </div>
+                                            <div class="col-6 d-flex">
+                                                <button type="button" class="btn btn-light swatchy-trigger">Select a Color</button>
+                                                <label class="visually-hidden" for="gen-3-color">Color Picker</label>
+                                                <input type="text" id="gen-3-color" class="form-control swatchy-output" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <label class="visually-hidden" for="gen-3-description">Description</label>
+                                            <textarea type="text" class="form-control input-group" id="gen-3-description" placeholder="Generation Description"></textarea>
+                                            <div>
+                                                <button type="button" id="gen-3-add-req" class="btn btn-light btn-sm mb-3 mt-2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <h4 class="d-inline ms-1 mt-2">Requirements</h4>
+                                                <div id="gen-3-req">
+                                                    <label class="visually-hidden">Requirements</label>
+                                                    <div class="input-group mb-2">
+                                                        <button type="button" class="input-group-text">1</button>
+                                                        <input type="text" class="form-control" placeholder="Enter a requirement...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button type="button" id="gen-3-add-ms" class="btn btn-light btn-sm mb-3 mt-2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <h4 class="d-inline ms-1">Milestones</h4>
+                                                <div id="gen-3-ms">
+                                                    <label class="visually-hidden">Milestones</label>
+                                                    <div class="input-group mb-2">
+                                                        <div class="input-group-text">1</div>
+                                                        <input type="text" class="form-control" placeholder="Enter a milestone...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
