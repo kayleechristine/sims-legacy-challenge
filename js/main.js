@@ -560,10 +560,12 @@ function hashtag(e) {
         if (num < 5) {
             num++;
             html += `
-                <label class="visually-hidden">${field}</label>
-                <div class="input-group mb-2">
+                <div class="input-group mb-2" id="gen-${id}-${prefix}-${num}">
                     <div class="input-group-text">${num}</div>
                     <input type="text" class="form-control" placeholder="Enter a ${field}...">
+                    <button type="button" class="input-group-text">
+                        <i class="bi bi-trash3-fill"></i>
+                    </button>
                 </div>`;
             $(`#gen-${id}-${prefix}`).html(html);
             $(`#gen-${id}-${prefix}`).data('num', num);
