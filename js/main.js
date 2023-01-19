@@ -548,18 +548,18 @@ function hashtag(e) {
 // TODO: Delete milestones & requirements
 
     function addRequirement(id) {
-        let num = 1;
         console.log('addRequirement fired: ', id);
         num++;
         let html = $(`#gen-${id}-req`).html();
+        let num;
         // TODO: log how many req there currently are as a data-dbid
         console.log(html);
         // TODO: wrap in a for loop to limit the amount of milestones
             html += `
-                <label class="visually-hidden">Milestones</label>
+                <label class="visually-hidden">Requirements</label>
                 <div class="input-group mb-2">
                     <div class="input-group-text">${num}</div>
-                    <input type="text" class="form-control" placeholder="Enter a milestone...">
+                    <input type="text" class="form-control" placeholder="Enter a requirement...">
                 </div>`;
         $(`#gen-${id}-req`).html(html);
     }
