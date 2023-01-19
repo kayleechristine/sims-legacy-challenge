@@ -542,15 +542,15 @@ function hashtag(e) {
 //////////// GENERATION REQUIREMENTS & MILESTONES ////////////
 // Succession laws which require additional information will
 // have a second drop-down menu generated.
-// TODO: Add generations
+// TODO: Add new generations
 // TODO: Rearrange / delete generations
+// TODO: Push to challenge object
 
     new Swatchy(); // Swatchy Constructor
 
     function addField(id, suffix) {
-
-        let html = $(`#gen-${id}-${suffix}`).html();
         let num = $(`#gen-${id}-${suffix}`).data('num');
+        let html = '';
         let field;
 
         switch (suffix) {
@@ -568,11 +568,12 @@ function hashtag(e) {
                         <i class="bi bi-trash3-fill"></i>
                     </button>
                 </div>`;
-            $(`#gen-${id}-${suffix}`).html(html);
+
+            $(`#gen-${id}-${suffix}-${num - 1}`).after(html);
             $(`#gen-${id}-${suffix}`).data('num', num);
         }
 
-        $('.delete-field').click((event) => {
+        $('.delete-field').unbind().click((event) => {
             let id = $(event.currentTarget).parent().attr('id');
             let parentId = $(`#${id}`).parent().attr('id');
             deleteField(id, parentId);
@@ -589,12 +590,10 @@ function hashtag(e) {
         addField(gen, "ms");
     });
 
-    // TODO: BUG: If the add field button is clicked too quickly, the delete
-    //  function will remove multiple un-targeted fields
     function deleteField(id, parentId) {
 
-        let num = $(`#${parentId}`).data('num'); // total # of fields
-        $(`#${parentId}`).data('num', num - 1); // updates total # of fields
+        let num = $(`#${parentId}`).data('num');
+        $(`#${parentId}`).data('num', num - 1);
         $(`#${id}`).remove();
 
         for (let i = 1; i < num; i++) {
