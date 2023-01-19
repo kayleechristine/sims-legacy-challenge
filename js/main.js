@@ -544,7 +544,6 @@ function hashtag(e) {
 // have a second drop-down menu generated.
 // TODO: Add generations
 // TODO: Rearrange / delete generations
-// TODO: Delete milestones & requirements
 
     new Swatchy(); // Swatchy Constructor
 
@@ -563,7 +562,7 @@ function hashtag(e) {
             num++;
             html += `
                 <div class="input-group mb-2" id="gen-${id}-${suffix}-${num}">
-                    <div class="input-group-text">${num}</div>
+                    <div class="input-group-text number-list">${num}</div>
                     <input type="text" class="form-control" placeholder="Enter a ${field}...">
                     <button type="button" class="input-group-text delete-field">
                         <i class="bi bi-trash3-fill"></i>
@@ -578,7 +577,6 @@ function hashtag(e) {
             let parentId = $(`#${id}`).parent().attr('id');
             deleteField(id, parentId);
         });
-
     }
 
     $('.add-req').click((event) => {
@@ -591,31 +589,21 @@ function hashtag(e) {
         addField(gen, "ms");
     });
 
-    // TODO: Milestone/Requirements section populates on page load
-    addField(1, "req");
-    addField(1, "ms");
-    addField(2, "req");
-    addField(2, "ms");
-    addField(3, "req");
-    addField(3, "ms");
-
-    // TODO: Delete Field Feature
+    // TODO: BUG: If the add field button is clicked too quickly, the delete
+    //  function will remove multiple un-targeted fields
     function deleteField(id, parentId) {
 
-        let num = $(`#${parentId}`).data('num') - 1;
-        $(`#${parentId}`).data('num', num);
-        console.log($(`#${parentId}`).data('num'));
-
-        // TODO: reassign numbers and id's
-        for (let i = 1; i <= num; i++) {
-            let prefix = parentId + "-" + i;
-            console.log(prefix);
-        }
-
-
+        let num = $(`#${parentId}`).data('num'); // total # of fields
+        $(`#${parentId}`).data('num', num - 1); // updates total # of fields
         $(`#${id}`).remove();
 
-        // console.log(num);
+        for (let i = 1; i < num; i++) {
+
+            let newId = parentId + "-" + (i + 1);
+            $(`#${parentId + "-" + i}`).next().attr('id', newId);
+            $(`#${newId}`).children('.number-list').text(i + 1);
+
+        }
     }
 
 })();
