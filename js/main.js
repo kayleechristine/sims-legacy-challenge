@@ -546,13 +546,15 @@ function hashtag(e) {
 // TODO: Rearrange / delete generations
 // TODO: Delete milestones & requirements
 
-    function addRequirement(id, prefix) {
+    new Swatchy(); // Swatchy Constructor
 
-        let html = $(`#gen-${id}-${prefix}`).html();
-        let num = $(`#gen-${id}-${prefix}`).data('num');
+    function addField(id, suffix) {
+
+        let html = $(`#gen-${id}-${suffix}`).html();
+        let num = $(`#gen-${id}-${suffix}`).data('num');
         let field;
 
-        switch (prefix) {
+        switch (suffix) {
             case "req": field = "requirement"; break;
             case "ms" : field = "milestone"; break;
         }
@@ -560,29 +562,60 @@ function hashtag(e) {
         if (num < 5) {
             num++;
             html += `
-                <div class="input-group mb-2" id="gen-${id}-${prefix}-${num}">
+                <div class="input-group mb-2" id="gen-${id}-${suffix}-${num}">
                     <div class="input-group-text">${num}</div>
                     <input type="text" class="form-control" placeholder="Enter a ${field}...">
-                    <button type="button" class="input-group-text">
+                    <button type="button" class="input-group-text delete-field">
                         <i class="bi bi-trash3-fill"></i>
                     </button>
                 </div>`;
-            $(`#gen-${id}-${prefix}`).html(html);
-            $(`#gen-${id}-${prefix}`).data('num', num);
+            $(`#gen-${id}-${suffix}`).html(html);
+            $(`#gen-${id}-${suffix}`).data('num', num);
         }
+
+        $('.delete-field').click((event) => {
+            let id = $(event.currentTarget).parent().attr('id');
+            let parentId = $(`#${id}`).parent().attr('id');
+            deleteField(id, parentId);
+        });
 
     }
 
     $('.add-req').click((event) => {
         let gen = $(event.currentTarget).attr('data-gen');
-        addRequirement(gen, "req");
+        addField(gen, "req");
     });
 
     $('.add-ms').click((event) => {
         let gen = $(event.currentTarget).attr('data-gen');
-        addRequirement(gen, "ms");
+        addField(gen, "ms");
     });
 
-    new Swatchy();
+    // TODO: Milestone/Requirements section populates on page load
+    addField(1, "req");
+    addField(1, "ms");
+    addField(2, "req");
+    addField(2, "ms");
+    addField(3, "req");
+    addField(3, "ms");
+
+    // TODO: Delete Field Feature
+    function deleteField(id, parentId) {
+
+        let num = $(`#${parentId}`).data('num') - 1;
+        $(`#${parentId}`).data('num', num);
+        console.log($(`#${parentId}`).data('num'));
+
+        // TODO: reassign numbers and id's
+        for (let i = 1; i <= num; i++) {
+            let prefix = parentId + "-" + i;
+            console.log(prefix);
+        }
+
+
+        $(`#${id}`).remove();
+
+        // console.log(num);
+    }
 
 })();
