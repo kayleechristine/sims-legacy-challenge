@@ -544,35 +544,41 @@ function hashtag(e) {
 // have a second drop-down menu generated.
 // TODO: Add generations
 // TODO: Rearrange / delete generations
-// TODO: Add milestones / requirements
 // TODO: Delete milestones & requirements
 
-    function addRequirement(id) {
-        console.log('addRequirement fired: ', id);
-        num++;
-        let html = $(`#gen-${id}-req`).html();
-        let num;
-        // TODO: log how many req there currently are as a data-dbid
-        console.log(html);
-        // TODO: wrap in a for loop to limit the amount of milestones
+    function addRequirement(id, prefix) {
+
+        let html = $(`#gen-${id}-${prefix}`).html();
+        let num = $(`#gen-${id}-${prefix}`).data('num');
+        let field;
+
+        switch (prefix) {
+            case "req": field = "requirement"; break;
+            case "ms" : field = "milestone"; break;
+        }
+
+        if (num < 5) {
+            num++;
             html += `
-                <label class="visually-hidden">Requirements</label>
+                <label class="visually-hidden">${field}</label>
                 <div class="input-group mb-2">
                     <div class="input-group-text">${num}</div>
-                    <input type="text" class="form-control" placeholder="Enter a requirement...">
+                    <input type="text" class="form-control" placeholder="Enter a ${field}...">
                 </div>`;
-        $(`#gen-${id}-req`).html(html);
+            $(`#gen-${id}-${prefix}`).html(html);
+            $(`#gen-${id}-${prefix}`).data('num', num);
+        }
+
     }
-    //
-    // $('#add-req').click(() => addRequirement());
 
     $('.add-req').click((event) => {
-        console.log();
-        addRequirement($(event.currentTarget).attr('data-gen'));
+        let gen = $(event.currentTarget).attr('data-gen');
+        addRequirement(gen, "req");
     });
 
     $('.add-ms').click((event) => {
-        console.log($(event.currentTarget).attr('data-gen'));
+        let gen = $(event.currentTarget).attr('data-gen');
+        addRequirement(gen, "ms");
     });
 
     new Swatchy();
