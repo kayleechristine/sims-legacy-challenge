@@ -76,9 +76,20 @@ function Swatchy(
             function selectColor(e) {
                 let input = document.querySelectorAll('.swatchy-output').item(id)
                 let newColor = e.target.getAttribute('data-swatchy-color')
+                let secondColor = e.target.previousSibling.getAttribute('data-swatchy-color');
+                console.log(secondColor)
+
+                // change header
                 let genID = output.getAttribute('id').replace('color', 'header');
                 let header = document.querySelector(`#${genID}`);
                 header.setAttribute('style', 'background-color: ' + newColor + ';');
+
+                // change button
+                let btnID = output.getAttribute('id').replace('color', 'btn');
+                let borderColor = document.querySelectorAll('.swatchy-output').item(id);
+                let btn = document.querySelector(`#${btnID}`);
+                btn.setAttribute('style', 'background-color: ' + newColor + '; border-color: ' + secondColor + ";");
+
                 input.setAttribute('value', newColor)
                 input.setAttribute('data-swatchy-color', newColor)
                 input.setAttribute('style', 'background-color: ' + newColor + '; color: ' + newColor + ';')
