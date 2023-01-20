@@ -86,10 +86,10 @@ function Swatchy(
 
                 // change button
                 let btnID = output.getAttribute('id').replace('color', 'btn');
-                let borderColor = document.querySelectorAll('.swatchy-output').item(id);
                 let btn = document.querySelector(`#${btnID}`);
                 btn.setAttribute('style', 'background-color: ' + newColor + '; border-color: ' + secondColor + ";");
 
+                // set color value
                 input.setAttribute('value', newColor)
                 input.setAttribute('data-swatchy-color', newColor)
                 input.setAttribute('style', 'background-color: ' + newColor + '; color: ' + newColor + ';')
@@ -108,9 +108,10 @@ function Swatchy(
                     el.style.display = 'none'
                 }
             }
+
         }
+
     } else {
         console.info('You only need to call swatchy once per page');
     }
 }
-
