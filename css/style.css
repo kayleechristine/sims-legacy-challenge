@@ -3,6 +3,10 @@
     --hue2: #24b978;
     --hue3: #2e8b58;
     --hue4: #116971;
+
+    --hue5: #4CDC7D;
+    --hue6: #24b978;
+    --hue7: #009D57;
 }
 main {
     display: flex;
@@ -163,4 +167,14 @@ h1 {
 /* Color Picker */
 .swatchy-output {
     transition: 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+}
+
+/* Generations */
+#gen-button-div {
+    margin-right: -2.5em;
+}
+.circle-btn {
+    border-radius: 50%;
+    height: 35px;
+    width: 32px;
 }

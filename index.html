@@ -144,7 +144,7 @@
             </div>
 
         <h3>Overview:</h3>
-        <span>Provide a basic information to help describe your challenge.</span>
+        <span>Provide basic information to help describe your challenge.</span>
         <!--TODO: Explain each difficulty level-->
             <div class="row justify-content-center">
             <div class="col-8 mt-3 mb-3 pe-5">
@@ -448,17 +448,26 @@
                 </div>
             </div>
 
-        <h3>Milestones:</h3>
-        <span>Specify the requirements and milestones for each generation.</span>
+        <h3>Generations:</h3>
+            <div class="d-flex justify-content-between align-items-start col-11">
+                    <span class="d-inline m-0">Specify the requirements and milestones for each generation.</span>
+                    <div id="gen-button-div">
+                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="1" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: #D9D9D9; border-color: #969696;">1</button>
+                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="2" style="background-color: #D9D9D9; border-color: #969696;">2</button>
+                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="3" style="background-color: #D9D9D9; border-color: #969696;">3</button>
+                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1">+</button>
+                    </div>
+            </div>
+
         <!--TODO: Add generation tabs-->
         <!--TODO: Rearrange/remove functionality-->
 
             <div class="row d-flex justify-content-center">
-                <div class="col-11 pt-3 pb-3" id="gen-accordian">
+                <div class="col-11 pb-3" id="gen-accordian">
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed" id="gen-1-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="">
+                                <button class="accordion-button collapsed" id="gen-1-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: #D9D9D9;">
                                     Generation 1
                                 </button>
                             </h2>
@@ -480,7 +489,7 @@
                                             <label class="visually-hidden" for="gen-1-description">Description</label>
                                             <textarea type="text" class="form-control input-group" id="gen-1-description" placeholder="Generation Description"></textarea>
                                             <div>
-                                                <button type="button" class="btn btn-light btn-sm mb-3 mt-2 add-req" data-gen="1" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-req" data-gen="1">+</button>
                                                 <h4 class="d-inline ms-1 mt-2">Requirements</h4>
                                                 <div id="gen-1-req" data-num="1">
                                                     <div class="input-group mb-2" id="gen-1-req-1">
@@ -490,7 +499,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <button type="button" class="btn btn-light btn-sm mb-3 mt-2 add-ms" data-gen="1" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-ms" data-gen="1">+</button>
                                                 <h4 class="d-inline ms-1">Milestones</h4>
                                                 <div id="gen-1-ms" data-num="1">
                                                     <div class="input-group mb-2" id="gen-1-ms-1">
@@ -506,7 +515,7 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" id="gen-2-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="">
+                                <button class="accordion-button collapsed" id="gen-2-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #D9D9D9;">
                                     Generation 2
                                 </button>
                             </h2>
@@ -528,7 +537,7 @@
                                             <label class="visually-hidden" for="gen-2-description">Description</label>
                                             <textarea type="text" class="form-control input-group" id="gen-2-description" placeholder="Generation Description"></textarea>
                                             <div>
-                                                <button type="button" class="btn btn-light btn-sm mb-3 mt-2 add-req" data-gen="2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-req" data-gen="2">+</button>
                                                 <h4 class="d-inline ms-1 mt-2">Requirements</h4>
                                                 <div id="gen-2-req" data-num="1">
                                                     <div class="input-group mb-2" id="gen-2-req-1">
@@ -538,7 +547,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <button type="button" class="btn btn-light btn-sm mb-3 mt-2 add-ms" data-gen="2" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-ms" data-gen="2">+</button>
                                                 <h4 class="d-inline ms-1">Milestones</h4>
                                                 <div id="gen-2-ms" data-num="1">
                                                     <div class="input-group mb-2" id="gen-2-ms-1">
@@ -554,7 +563,7 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" id="gen-3-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="">
+                                <button class="accordion-button collapsed" id="gen-3-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color: #D9D9D9;">
                                     Generation 3
                                 </button>
                             </h2>
@@ -576,7 +585,7 @@
                                             <label class="visually-hidden" for="gen-3-description">Description</label>
                                             <textarea type="text" class="form-control input-group" id="gen-3-description" placeholder="Generation Description"></textarea>
                                             <div>
-                                                <button type="button" class="btn btn-light btn-sm mb-3 mt-2 add-req" data-gen="3" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-req" data-gen="3">+</button>
                                                 <h4 class="d-inline ms-1 mt-2">Requirements</h4>
                                                 <div id="gen-3-req" data-num="1">
                                                     <div class="input-group mb-2" id="gen-3-req-1">
@@ -586,7 +595,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <button type="button" class="btn btn-light btn-sm mb-3 mt-2 add-ms" data-gen="3" style="border-radius: 50%; height: 35px; width: 32px;">+</button>
+                                                <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-ms" data-gen="3">+</button>
                                                 <h4 class="d-inline ms-1">Milestones</h4>
                                                 <div id="gen-3-ms" data-num="1">
                                                     <div class="input-group mb-2" id="gen-3-ms-1">
