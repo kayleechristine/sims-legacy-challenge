@@ -542,35 +542,103 @@ function hashtag(e) {
 //////////// GENERATIONS ////////////
 // New Swatchy constructor initializes the color selector.
 // TODO: Add new generations
-// TODO: Rearrange / delete generations
+// TODO: Delete generations
+// TODO: Rearrange generations
 // TODO: Push to challenge object
 
     new Swatchy();
+    // TODO: fix swatchy border issue
 
-//     < div
-//     className = "accordion-item" >
-//         < h2
-//     className = "accordion-header"
-//     id = "headingFour" >
-//         < button
-//     className = "accordion-button collapsed"
-//     id = "gen-4-header"
-//     type = "button"
-//     data - bs - toggle = "collapse"
-//     data - bs - target = "#collapseFour"
-//     aria - expanded = "false"
-//     aria - controls = "collapseFour"
-//     style = "" >
-//         Generation
-//     4
-//     < /button>
-// </h2>
-//     <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour"
-//          data-bs-parent="#accordionExample">
-//         <div className="accordion-body d-flex justify-content-center">
-//         </div>
-//     </div>
-// </div>
+    function addGeneration() {
+
+        let gen = $(`#gen-btn-div`).data('gen') + 1;
+
+        if (gen <= 12) {
+
+            // adds gen btn
+            let btnHtml = `
+                <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="${gen}" data-bs-toggle="collapse" data-bs-target="#collapse${gen}" aria-expanded="false" aria-controls="collapse${gen}" style="background-color: #D9D9D9; border-color: #969696;" id="gen-${gen}-btn">${gen}</button>`;
+            $(`#gen-${gen - 1}-btn`).after(btnHtml);
+
+            // add gen form
+            // TODO: fix issue with swatchy / addField not initializing
+            let formHtml = `
+                <div id="accordion-item-${gen}" class="accordion-item">
+                    <h2 class="accordion-header" id="accordion-${gen}">
+                        <button class="accordion-button collapsed" id="gen-${gen}-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${gen}" aria-expanded="false" aria-controls="collapse${gen}" style="background-color: #D9D9D9;">Generation ${gen}</button>
+                    </h2>
+                    <div id="collapse${gen}" class="accordion-collapse collapse" aria-labelledby="heading${gen}" data-bs-parent="#accordionExample">
+                        <div class="accordion-body d-flex justify-content-center">
+                            <!-- form body -->
+                            <!-- TODO: add gen id's -->
+                            <!-- TODO: fix hard-coded id's -->
+                            <div class="col-11 mt-3 d-flex flex-column">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="visually-hidden" for="gen-${gen}-title">Title</label>
+                                        <input type="text" class="form-control" id="gen-${gen}-title" placeholder="Generation Title">
+                                    </div>
+                                    <div class="col-6 d-flex">
+                                        <button type="button" class="btn btn-light swatchy-trigger">Select a Color</button>
+                                        <label class="visually-hidden" for="gen-${gen}-color">Color Picker</label>
+                                        <input type="text" id="gen-${gen}-color" class="form-control swatchy-output" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <label class="visually-hidden" for="gen-${gen}-description">Description</label>
+                                    <textarea type="text" class="form-control input-group" id="gen-${gen}-description" placeholder="Generation Description"></textarea>
+                                    <div>
+                                        <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-req" data-gen="${gen}">+</button>
+                                        <h4 class="d-inline ms-1 mt-2">Requirements</h4>
+                                        <div id="gen-${gen}-req" data-num="1">
+                                            <div class="input-group mb-2" id="gen-${gen}-req-1">
+                                                <div class="input-group-text">1</div>
+                                                <input type="text" class="form-control" placeholder="Enter a requirement...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-ms" data-gen="${gen}">+</button>
+                                        <h4 class="d-inline ms-1">Milestones</h4>
+                                        <div id="gen-${gen}-ms" data-num="1">
+                                            <div class="input-group mb-2" id="gen-${gen}-ms-1">
+                                                <div class="input-group-text">1</div>
+                                                <input type="text" class="form-control" placeholder="Enter a milestone...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                      
+                        </div>
+                    </div>
+                </div>`;
+            $(`#accordion-item-${gen - 1}`).after(formHtml);
+
+            // updates total gen
+            $(`#gen-btn-div`).data('gen', gen);
+            // $(`#gen-${gen}-color`).prev.prev.new Swatchy();
+            newSwatch(gen);
+
+
+
+
+        }
+        // $(`.swatchy-trigger`).click(() => togglePopup());
+
+    }
+
+    // function togglePopup() {
+    //     let el = document.querySelectorAll('.swatchy-element').item(id)
+    //
+    //     let display = (window.getComputedStyle ? getComputedStyle(el, null) : el.currentStyle).display
+    //     if ('none' === display) {
+    //         el.style.display = 'block'
+    //     } else {
+    //         el.style.display = 'none'
+    //     }
+    // }
+
+    $('#add-gen').click(() => addGeneration());
 
 //////////// REQUIREMENTS & MILESTONES ////////////
 // The addField function will add new fields for the selected
