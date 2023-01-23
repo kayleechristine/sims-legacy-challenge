@@ -541,7 +541,6 @@ function hashtag(e) {
 
 //////////// GENERATIONS ////////////
 // New Swatchy constructor initializes the color selector.
-// TODO: Add new generations
 // TODO: Delete generations
 // TODO: Rearrange generations
 // TODO: Push to challenge object
@@ -561,7 +560,6 @@ function hashtag(e) {
             $(`#gen-${gen - 1}-btn`).after(btnHtml);
 
             // add gen form
-            // TODO: Fix addField not initializing
             let formHtml = `
                 <div id="accordion-item-${gen}" class="accordion-item">
                     <h2 class="accordion-header" id="accordion-${gen}">
