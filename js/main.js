@@ -562,14 +562,12 @@ function hashtag(e) {
             // add gen form
             let formHtml = `
                 <div id="accordion-item-${gen}" class="accordion-item">
-                    <h2 class="accordion-header" id="accordion-${gen}">
+                    <h2 class="accordion-header" id="heading${gen}">
                         <button class="accordion-button collapsed" id="gen-${gen}-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${gen}" aria-expanded="false" aria-controls="collapse${gen}" style="background-color: #D9D9D9;">Generation ${gen}</button>
                     </h2>
-                    <div id="collapse${gen}" class="accordion-collapse collapse" aria-labelledby="heading${gen}" data-bs-parent="#accordionExample">
+                    <div id="collapse${gen}" class="accordion-collapse collapse" aria-labelledby="heading${gen}" data-bs-parent="#generations">
                         <div class="accordion-body d-flex justify-content-center">
                             <!-- form body -->
-                            <!-- TODO: add gen id's -->
-                            <!-- TODO: fix hard-coded id's -->
                             <div class="col-11 mt-3 d-flex flex-column">
                                 <div class="row">
                                     <div class="col-6">
