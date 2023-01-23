@@ -452,26 +452,25 @@
             <div class="d-flex justify-content-between align-items-start col-11">
                     <span class="d-inline m-0">Specify the requirements and milestones for each generation.</span>
                     <div id="gen-btn-div" data-gen="3">
-                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="1" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: #D9D9D9; border-color: #969696;" id="gen-1-btn">1</button>
-                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="2" style="background-color: #D9D9D9; border-color: #969696;" id="gen-2-btn">2</button>
-                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="3" style="background-color: #D9D9D9; border-color: #969696;" id="gen-3-btn">3</button>
+                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="1" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1" style="background-color: #D9D9D9; border-color: #969696;" id="gen-1-btn">1</button>
+                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="2" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2" style="background-color: #D9D9D9; border-color: #969696;" id="gen-2-btn">2</button>
+                        <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" data-gen="3" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3" style="background-color: #D9D9D9; border-color: #969696;" id="gen-3-btn">3</button>
                         <button type="button" class="btn btn-light btn-sm circle-btn ms-1 mb-1" id="add-gen">+</button>
                     </div>
             </div>
 
-        <!--TODO: Add generation tabs-->
         <!--TODO: Rearrange/remove functionality-->
 
             <div class="row d-flex justify-content-center">
                 <div class="col-11 pb-3" id="gen-accordion">
-                    <div class="accordion" id="accordionExample">
+                    <div class="accordion" id="generations">
                         <div id="accordion-item-1" class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed" id="gen-1-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: #D9D9D9;">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button collapsed" id="gen-1-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1" style="background-color: #D9D9D9;">
                                     Generation 1
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#generations">
                                 <div class="accordion-body d-flex justify-content-center">
                                     <div class="col-11 mt-3 d-flex flex-column">
                                         <div class="row">
@@ -485,7 +484,7 @@
                                                 <input type="text" id="gen-1-color" class="form-control swatchy-output" disabled>
                                             </div>
                                         </div>
-                                        <div class="col-12 mt-3">
+                                        <div class="col-12 mt-3 mb-3">
                                             <label class="visually-hidden" for="gen-1-description">Description</label>
                                             <textarea type="text" class="form-control input-group" id="gen-1-description" placeholder="Generation Description"></textarea>
                                             <div>
@@ -502,7 +501,7 @@
                                                 <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-ms" data-gen="1">+</button>
                                                 <h4 class="d-inline ms-1">Milestones</h4>
                                                 <div id="gen-1-ms" data-num="1">
-                                                    <div class="input-group mb-2" id="gen-1-ms-1">
+                                                    <div class="input-group" id="gen-1-ms-1">
                                                         <div class="input-group-text">1</div>
                                                         <input type="text" class="form-control" placeholder="Enter a milestone...">
                                                     </div>
@@ -514,12 +513,12 @@
                             </div>
                         </div>
                         <div id="accordion-item-2" class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" id="gen-2-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #D9D9D9;">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button collapsed" id="gen-2-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2" style="background-color: #D9D9D9;">
                                     Generation 2
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#generations">
                                 <div class="accordion-body d-flex justify-content-center">
                                     <div class="col-11 mt-3 d-flex flex-column">
                                         <div class="row">
@@ -533,7 +532,7 @@
                                                 <input type="text" id="gen-2-color" class="form-control swatchy-output" disabled>
                                             </div>
                                         </div>
-                                        <div class="col-12 mt-3">
+                                        <div class="col-12 mt-3 mb-3">
                                             <label class="visually-hidden" for="gen-2-description">Description</label>
                                             <textarea type="text" class="form-control input-group" id="gen-2-description" placeholder="Generation Description"></textarea>
                                             <div>
@@ -550,7 +549,7 @@
                                                 <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-ms" data-gen="2">+</button>
                                                 <h4 class="d-inline ms-1">Milestones</h4>
                                                 <div id="gen-2-ms" data-num="1">
-                                                    <div class="input-group mb-2" id="gen-2-ms-1">
+                                                    <div class="input-group" id="gen-2-ms-1">
                                                         <div class="input-group-text">1</div>
                                                         <input type="text" class="form-control" placeholder="Enter a milestone...">
                                                     </div>
@@ -562,12 +561,12 @@
                             </div>
                         </div>
                         <div id="accordion-item-3" class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" id="gen-3-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color: #D9D9D9;">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed" id="gen-3-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3" style="background-color: #D9D9D9;">
                                     Generation 3
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#generations">
                                 <div class="accordion-body d-flex justify-content-center">
                                     <div class="col-11 mt-3 d-flex flex-column">
                                         <div class="row">
@@ -598,7 +597,7 @@
                                                 <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-ms" data-gen="3">+</button>
                                                 <h4 class="d-inline ms-1">Milestones</h4>
                                                 <div id="gen-3-ms" data-num="1">
-                                                    <div class="input-group mb-2" id="gen-3-ms-1">
+                                                    <div class="input-group" id="gen-3-ms-1">
                                                         <div class="input-group-text">1</div>
                                                         <input type="text" class="form-control" placeholder="Enter a milestone...">
                                                     </div>

@@ -585,7 +585,7 @@ function hashtag(e) {
                                 <div class="col-12 mt-3">
                                     <label class="visually-hidden" for="gen-${gen}-description">Description</label>
                                     <textarea type="text" class="form-control input-group" id="gen-${gen}-description" placeholder="Generation Description"></textarea>
-                                    <div>
+                                    <div class="mt-1">
                                         <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-req" data-gen="${gen}">+</button>
                                         <h4 class="d-inline ms-1 mt-2">Requirements</h4>
                                         <div id="gen-${gen}-req" data-num="1">
@@ -599,7 +599,7 @@ function hashtag(e) {
                                         <button type="button" class="btn btn-light btn-sm circle-btn mb-3 mt-2 add-ms" data-gen="${gen}">+</button>
                                         <h4 class="d-inline ms-1">Milestones</h4>
                                         <div id="gen-${gen}-ms" data-num="1">
-                                            <div class="input-group mb-2" id="gen-${gen}-ms-1">
+                                            <div class="input-group" id="gen-${gen}-ms-1">
                                                 <div class="input-group-text">1</div>
                                                 <input type="text" class="form-control" placeholder="Enter a milestone...">
                                             </div>
