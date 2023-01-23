@@ -547,7 +547,7 @@ function hashtag(e) {
 // TODO: Push to challenge object
 
     new Swatchy();
-    // TODO: fix swatchy border issue
+    // TODO: Fix swatchy border issue
 
     function addGeneration() {
 
@@ -561,7 +561,7 @@ function hashtag(e) {
             $(`#gen-${gen - 1}-btn`).after(btnHtml);
 
             // add gen form
-            // TODO: fix issue with swatchy / addField not initializing
+            // TODO: Fix addField not initializing
             let formHtml = `
                 <div id="accordion-item-${gen}" class="accordion-item">
                     <h2 class="accordion-header" id="accordion-${gen}">
@@ -614,29 +614,23 @@ function hashtag(e) {
                 </div>`;
             $(`#accordion-item-${gen - 1}`).after(formHtml);
 
-            // updates total gen
+            // updates total gen data #
             $(`#gen-btn-div`).data('gen', gen);
-            // $(`#gen-${gen}-color`).prev.prev.new Swatchy();
+            // initializes add req / ms
+            // TODO: Duplicated code is not best practice
+            $('.add-req').click((event) => {
+                let gen = $(event.currentTarget).attr('data-gen');
+                addField(gen, "req");
+            });
+            $('.add-ms').click((event) => {
+                let gen = $(event.currentTarget).attr('data-gen');
+                addField(gen, "ms");
+            });
+            // initializes swatchy for new gen
             newSwatch(gen);
 
-
-
-
         }
-        // $(`.swatchy-trigger`).click(() => togglePopup());
-
     }
-
-    // function togglePopup() {
-    //     let el = document.querySelectorAll('.swatchy-element').item(id)
-    //
-    //     let display = (window.getComputedStyle ? getComputedStyle(el, null) : el.currentStyle).display
-    //     if ('none' === display) {
-    //         el.style.display = 'block'
-    //     } else {
-    //         el.style.display = 'none'
-    //     }
-    // }
 
     $('#add-gen').click(() => addGeneration());
 
