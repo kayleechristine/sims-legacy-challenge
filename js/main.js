@@ -546,7 +546,7 @@ function hashtag(e) {
 // TODO: Push to challenge object
 
     new Swatchy();
-    // TODO: Fix swatchy border issue
+    // TODO: Fix swatchy border issue (disjointed colors)
 
     function addGeneration() {
 
