@@ -694,5 +694,4 @@ function hashtag(e) {
 
         }
     }
-
 })();
