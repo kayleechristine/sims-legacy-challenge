@@ -687,11 +687,9 @@ function hashtag(e) {
         $(`#${id}`).remove();
 
         for (let i = 1; i < num; i++) {
-
             let newId = parentId + "-" + (i + 1);
             $(`#${parentId + "-" + i}`).next().attr('id', newId);
             $(`#${newId}`).children('.number-list').text(i + 1);
-
         }
     }
 
