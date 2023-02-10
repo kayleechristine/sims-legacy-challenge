@@ -1,7 +1,6 @@
 "use strict";
 (function(){
 // TODO: incorporate mySQL & Java III
-    //
 
 // Bootstrap Tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
