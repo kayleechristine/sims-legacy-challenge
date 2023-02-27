@@ -2,7 +2,7 @@
 (function(){
 // TODO: incorporate mySQL & Java III
     // TODO: add Spring & Thymeleaf
-
+    // TODO: read me file
 
 // Bootstrap Tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
