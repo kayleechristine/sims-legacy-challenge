@@ -13,6 +13,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 // a modal with the available logos will appear. After selection, the button will only appear on hover.
 
 let logo;
+
 $('#logo-submit').click(function() {
     logo = $('input[name="challenge-logo"]:checked').val();
     $('#logo-placeholder').attr('src', `img/logos/${logo}.png`).css('opacity', '100%');
