@@ -29,7 +29,6 @@ $('#logo-submit').click(function() {
     );
 })
 
-
 //////////// CHALLENGE DATA OBJECT ////////////
 // TODO: Save submitted challenges to a database
 // Creates an object for the challenge containing
