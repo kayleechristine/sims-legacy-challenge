@@ -10,6 +10,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 //////////// LOGO SELECTION ////////////
+
 // On first load, a button will be present prompting the user to select a logo. When the button is clicked,
 // a modal with the available logos will appear. After selection, the button will only appear on hover.
 
