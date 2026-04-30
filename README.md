@@ -1,4 +1,4 @@
-# Sims4Tracker
+# Sims Legacies
 
 A web app for tracking Sims 4 playthroughs. Players can create Sim character sheets, write diary entries, log life events, and track challenge runs. A public feed lets others view updates. A Sims 4 mod will eventually export Sim data directly into the app via a REST API.
 
