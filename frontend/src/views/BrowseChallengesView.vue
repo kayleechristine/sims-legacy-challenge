@@ -1,7 +1,6 @@
 <template>
-  <main class="container mt-4">
+  <v-container class="mt-4">
     <h2>Browse Challenges</h2>
-    <hr>
-    <p>Challenge browser coming soon.</p>
-  </main>
+    <v-divider class="my-3" />
+  </v-container>
 </template>
