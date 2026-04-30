@@ -4,6 +4,7 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Flyway](https://img.shields.io/badge/Flyway-CC0200?style=flat&logo=flyway&logoColor=white)](https://flywaydb.org/)
 [![Vue 3](https://img.shields.io/badge/Vue%203-4FC08D?style=flat&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
+[![Vuetify](https://img.shields.io/badge/Vuetify-1867C0?style=flat&logo=vuetify&logoColor=white)](https://vuetifyjs.com/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![Cloudflare R2](https://img.shields.io/badge/Cloudflare%20R2-F38020?style=flat&logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/r2/)
 
@@ -22,7 +23,7 @@ A full-stack web app for tracking Sims 4 playthroughs. Players can create Sim ch
 | Backend API | Spring Boot (Java) |
 | Database | PostgreSQL |
 | Migrations | Flyway |
-| Frontend | Vue 3 |
+| Frontend | Vue 3 + Vuetify 3 |
 | Auth | Spring Security (session-based) |
 | Mod Bridge | Python |
 | Hosting | TBD |
@@ -31,7 +32,7 @@ A full-stack web app for tracking Sims 4 playthroughs. Players can create Sim ch
 
 ## Architecture
 
-The app runs on a single server with Nginx as a reverse proxy. Nginx routes `/api/*` traffic to the Spring Boot backend and serves the Vue 3 frontend as a static build. A Python sidecar process watches for Sim data exported by the Sims 4 mod and POSTs it to the Spring Boot API. Photos are stored in Cloudflare R2.
+The app runs on a single server with Nginx as a reverse proxy. Nginx routes `/api/*` traffic to the Spring Boot backend and serves the Vue 3 + Vuetify 3 frontend as a static build. A Python sidecar process watches for Sim data exported by the Sims 4 mod and POSTs it to the Spring Boot API. Photos are stored in Cloudflare R2.
 
 See [docs/architecture.md](docs/architecture.md) for the full architecture diagram and data flow.
 

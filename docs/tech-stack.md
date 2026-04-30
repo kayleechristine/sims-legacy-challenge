@@ -13,8 +13,8 @@ Primary data store. Chosen over MySQL for native JSONB support (used by fields l
 SQL-first database migration tool. Migration scripts live in version-controlled `.sql` files and are applied automatically on application startup. Provides a reliable, auditable history of schema changes.
 
 ## Frontend
-**Vue 3**
-Single-page application (SPA) that calls the Spring Boot REST API. Runs as a separate service from the backend. No SSR framework (Nuxt) — SEO is not a priority for this community-facing app.
+**Vue 3 + Vuetify 3**
+Single-page application (SPA) that calls the Spring Boot REST API. Runs as a separate service from the backend. No SSR framework (Nuxt) — SEO is not a priority for this community-facing app. Vuetify 3 serves as the UI component library.
 
 ## Authentication
 **Spring Security — session-based**
