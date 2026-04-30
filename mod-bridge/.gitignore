@@ -1,0 +1,6 @@
+*.imported
+__pycache__/
+*.pyc
+.env
+venv/
+watch/
