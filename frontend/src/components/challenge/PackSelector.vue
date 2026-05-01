@@ -34,25 +34,27 @@ function toggle(packId) {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 16px;
 }
 
 .pack-opt {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90px;
-  padding: 8px 4px;
+  scale: 1.02;
+  padding: 4px 4px;
   border: 2px solid transparent;
-  border-radius: 8px;
+  border-radius: 100%;
   cursor: pointer;
   background: none;
-  transition: border-color 0.15s, background-color 0.15s;
+  transition: transform 0.3s ease;
   text-align: center;
 }
 
 .pack-opt:hover {
-  border-color: rgba(var(--v-theme-primary), 0.5);
-  background-color: rgba(var(--v-theme-primary), 0.05);
+  border-radius: 100%;
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .pack-opt--active {
