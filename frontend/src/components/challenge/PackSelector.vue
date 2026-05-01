@@ -1,16 +1,19 @@
 <template>
   <div class="pack-grid">
-    <button
-      v-for="pack in PACKS"
-      :key="pack.id"
-      type="button"
-      class="pack-opt"
-      :class="{ 'pack-opt--active': model.includes(pack.id) }"
-      @click="toggle(pack.id)"
-    >
-      <img :src="`/img/packs/${pack.img}`" :alt="pack.name" width="64" height="64" />
-      <span class="text-caption pack-label">{{ pack.name }}</span>
-    </button>
+      <button
+        v-for="pack in PACKS"
+        :key="pack.id"
+        type="button"
+        class="pack-opt"
+        :class="{ 'pack-opt--active': model.includes(pack.id) }"
+        @click="toggle(pack.id)"
+      >
+        <v-tooltip :text="pack.name" location="top">
+          <template #activator="{ props: tip }">
+            <img v-bind="tip":src="`/img/packs/${pack.img}`" :alt="pack.name" width="64" height="64" />
+          </template>
+        </v-tooltip>
+      </button>
   </div>
 </template>
 
