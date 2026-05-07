@@ -31,16 +31,18 @@ function toggle(packId) {
 
 <style scoped>
 .pack-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 5px;
 }
 
 .pack-opt {
   display: flex;
   flex-direction: column;
+  justify-self: space-around;
   align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
   scale: 1.02;
   padding: 4px 4px;
   border: 2px solid transparent;

@@ -34,10 +34,10 @@
                   <button type="button" class="logo-preview" @click="logoDialogOpen = true">
                     <img :src="`/img/logos/${form.logo || 'empty'}.png`" alt="Challenge logo" />
                   </button>
-                  <p class="text-caption text-medium-emphasis mt-1">Click to change</p>
+                  <p class="text-caption text-medium-emphasis mt-1">Select a Logo</p>
                 </v-col>
                 <v-col>
-                  <div class="d-flex gap-3 mb-3">
+                  <div class="d-flex ga-5">
                     <v-text-field
                       v-model="form.title"
                       label="Title"
@@ -54,7 +54,7 @@
                       label="Difficulty"
                       variant="outlined"
                       density="compact"
-                      style="max-width: 150px"
+                      style="max-width: 200px"
                     />
                   </div>
                   <v-textarea
@@ -164,8 +164,8 @@
               <v-expansion-panels v-model="openPanels" multiple class="mb-4">
                 <v-expansion-panel v-for="(gen, i) in form.generations" :key="i">
                   <v-expansion-panel-title>
-                    <div class="d-flex align-center gap-3">
-                      <v-chip size="small" label :color="gen.color" class="text-white font-weight-medium">
+                    <div class="d-flex ga-2 align-center">
+                      <v-chip size="small" label variant="flat" :color="gen.color" :style="{ color: chipTextColor(gen.color) }" class="font-weight-medium">
                         Gen {{ gen.number }}
                       </v-chip>
                       <span>{{ gen.title || `Generation ${gen.number}` }}</span>
@@ -179,6 +179,7 @@
                           label="Generation Title"
                           density="compact"
                           variant="outlined"
+                          hide-details="auto"
                           placeholder="e.g. The Founder"
                         />
                       </v-col>
@@ -188,6 +189,7 @@
                           label="Color"
                           density="compact"
                           variant="outlined"
+                          hide-details="auto"
                           type="color"
                         />
                       </v-col>
@@ -257,11 +259,11 @@
         <v-window-item :value="5">
           <v-card flat>
             <v-card-text>
-              <div class="d-flex align-center gap-6 mb-5">
+              <div class="d-flex align-center ga-4 mb-5">
                 <img :src="`/img/logos/${form.logo || 'empty'}.png`" alt="logo" width="80" height="80" style="flex-shrink: 0" />
                 <div>
                   <p class="text-h6 mb-2">{{ form.title || '(Untitled)' }}</p>
-                  <div class="d-flex gap-2 flex-wrap">
+                  <div class="d-flex ga-2 flex-wrap">
                     <v-chip size="small" class="text-capitalize">{{ form.difficulty }}</v-chip>
                     <v-chip v-if="form.isPublic" size="small" color="primary">Public</v-chip>
                     <v-chip v-else size="small">Private</v-chip>
@@ -274,7 +276,7 @@
               <v-divider class="mb-3" />
               <p class="text-subtitle-2 mb-2">Required Packs</p>
               <p v-if="!form.packs.length" class="text-body-2 text-medium-emphasis mb-4">None required</p>
-              <div v-else class="d-flex flex-wrap gap-2 mb-4">
+              <div v-else class="d-flex flex-wrap ga-2 mb-4">
                 <v-tooltip
                   v-for="packId in form.packs"
                   :key="packId"
@@ -325,8 +327,8 @@
               <p class="text-subtitle-2 mb-3">Generations ({{ form.generations.length }})</p>
               <p v-if="!form.generations.length" class="text-body-2 text-medium-emphasis">No generations defined.</p>
               <div v-for="gen in form.generations" :key="gen.number" class="mb-4">
-                <div class="d-flex align-center gap-2 mb-1">
-                  <v-chip size="small" label :color="gen.color" class="text-white">Gen {{ gen.number }}</v-chip>
+                <div class="d-flex align-center ga-2 mb-1">
+                  <v-chip size="small" label variant="flat" :color="gen.color" :style="{ color: chipTextColor(gen.color) }">Gen {{ gen.number }}</v-chip>
                   <span class="font-weight-medium">{{ gen.title || `Generation ${gen.number}` }}</span>
                 </div>
                 <p v-if="gen.description" class="text-body-2 text-medium-emphasis mb-1">{{ gen.description }}</p>
@@ -411,6 +413,15 @@ const form = reactive({
   },
   generations: [],
 });
+
+function chipTextColor(hex) {
+  const r = parseInt(hex.slice(1, 3), 16) / 255;
+  const g = parseInt(hex.slice(3, 5), 16) / 255;
+  const b = parseInt(hex.slice(5, 7), 16) / 255;
+  const lin = (c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+  const luminance = 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+  return luminance > 0.179 ? '#000000' : '#ffffff';
+}
 
 function lawName(key) {
   return ALL_LAWS.find((l) => l.key === key)?.name ?? null;
@@ -544,8 +555,8 @@ function submit() {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 96px;
-  height: 96px;
+  width: 180px;
+  height: 180px;
   border: 2px dashed rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   cursor: pointer;
@@ -559,8 +570,8 @@ function submit() {
 }
 
 .logo-preview img {
-  width: 68px;
-  height: 68px;
+  width: 75%;
+  height: 75%;
   object-fit: contain;
 }
 </style>
